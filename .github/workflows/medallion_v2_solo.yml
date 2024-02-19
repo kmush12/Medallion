@@ -6,7 +6,7 @@ env:
   JOB_1_NAME: load_data_to_bronze
   JOB_2_NAME: bronze_to_silver
   JOB_3_NAME: silver_to_gold
-  GIT_TOKEN: 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
+  GIT_TOKEN: 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
 
 jobs:
   Release:

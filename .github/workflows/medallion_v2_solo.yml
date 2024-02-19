@@ -1,0 +1,61 @@
+name: Medalion
+
+on: [push]
+
+env:
+  JOB_1_NAME: load_data_to_bronze
+  JOB_2_NAME: bronze_to_silver
+  JOB_3_NAME: silver_to_gold
+
+jobs:
+  Release:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+          repository: Sofixit/ilum-backend ???
+          token: ${{ secrets.GIT_TOKEN }} # gdzie secrety są, chyba wszystko jawnie na blogu
+
+#jakoś port forward na cora, żeby było gdzie strzelać
+
+#Load data to Bronze
+
+      # jak sparsować kod z pliku i wrzucić w curl, może wystarczy ścieżke podać
+      # zapisać groupId z response na zmienną środowiskową
+      - name: Create "Load data to Bronze" Job
+        id: create_1_job
+        run: |
+          curl -X POST "http://localhost:9888/api/v1/group" \
+          -H "Accept: application/json" \
+          -H "Content-Type: multipart/form-data" \
+          -F "name=$JOB_1_NAME" \
+          -F "clusterName=default" \
+          -F "kind=job" \
+          -F "language=python" \
+          -F "scale=1" \
+          -F "pyRequirements=pandas" \
+          -F "pyFiles=@/home/sofixit/Desktop/Work/ILUM/Medalion/Jobs/load_data_to_bronze.py" \
+          >> $GITHUB_OUTPUT
+
+      # strzelac Get po joba po nazwie oczekując aż wstanie
+      - name: for the creation of a "Load data to Bronze" job
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 11
+          max_attempts: 10
+          retry_wait_seconds: 60
+          command: |
+            curl -X GET "http://localhost:9888/api/v1/group/name/$JOB_1_NAME" \
+            -H "Accept: application/json"
+
+      - name: Execute "Load data to Bronze" Job
+        #synchroniczny endpoint
+        #JOB_ID_1 = steps.run_tests.outputs.
+        # jak wyciągnąc groupID z poprzedniego stage i wrzucic w url poniżej
+        run: |
+          curl "http://ilum.ilum-kacper.piwnica.sofixit.pl/core/api/dev/reactive/truly/group/IDDDDDDDDDDDDDDDDDDDDDDDD/job" \
+          -H "Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsIm5iZiI6MTcwNDc5NTg4NSwiaXNzIjoiaHR0cHM6Ly9pbHVtLmNsb3VkIiwiZ3JvdXBzIjpbIkFETUlOIl0sImV4cCI6MTcwNDgyNDY4NSwiaWF0IjoxNzA0Nzk1ODg1fQ.TzggyKUxbNz8OlHqBymFk5_XOgBbGYNxGPkgrXHwl1dE5thJJn1bBimenI5QV93LNMflpd7UzZD2-54mI5-e684NwAmUsOTur-8vvQ5Y5hkVt-95Lgfhpimbt9akuFsXMQrydrwl6ev6ZYkD1NSc5izePta0fIgqJqZ2PaX7e8bAx9o9HPtVp8s27fx3CYbhiaYqtwUYDZ-b_x-Pqwe52OPRkYtHvYTb0vDqq7pXyam-OBMieNyWHVidzbGETIlICFzIohLgBijlBxOGZPi8ud_Bl9ZARKAcWE-WJaa1SaJpU6oH9k2TGUN43BcqHk0eizgSybuK0WOYuLSZcmJiTA" \
+          -H "Content-Type: application/json" \
+          --data-raw "{"config":{"animals_url":"https://raw.githubusercontent.com/Sofixit/ilum-spark-example/master/medallion-example/animals.csv","owners_url":"https://raw.githubusercontent.com/Sofixit/ilum-spark-example/master/medallion-example/owners.csv","species_url":"https://raw.githubusercontent.com/Sofixit/ilum-spark-example/master/medallion-example/species.csv","animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv"},"clazz":"load_data_to_bronze.RawDataToBronze","type":"interactive_job","cursor":0}"

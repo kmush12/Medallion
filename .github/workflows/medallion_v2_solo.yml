@@ -15,8 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          with:
-            ref: ${{ github.head_ref }}
+          ref: ${{ github.head_ref }}
           repository: kmush12/Medallion
           token: $GIT_TOKEN #${{ secrets.GIT_TOKEN }}  gdzie secrety są, chyba wszystko jawnie na blogu
 

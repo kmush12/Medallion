@@ -19,8 +19,6 @@ jobs:
           repository: kmush12/Medallion
           token: ${{ secrets.GITHUB_TOKEN }}
 
-#jakoś port forward na cora, żeby było gdzie strzelać
-
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
@@ -31,17 +29,13 @@ jobs:
           sudo install kubectl /usr/local/bin/kubectl
           kubectl version --client=true
 
-#      - name: Forward Ilum-core port
-#        run: kubectl port-forward -n default svc/ilum-core 9888:9888
-
       - name: Forward port 9888 to service ilum-core
         run: |
           kubectl port-forward -n default svc/ilum-core 9888:9888 &
-        # sleep 10s
+
 #Load data to Bronze
 
-      # jak sparsować kod z pliku i wrzucić w curl, może wystarczy ścieżke podać
-      # zapisać groupId z response na zmienną środowiskowąa
+      # zapisać groupId z JSON response na zmienną środowiskowąa
       - name: Create "Load data to Bronze" Job
         id: create_1_job
         run: |
@@ -54,8 +48,10 @@ jobs:
           -F "language=python" \
           -F "scale=1" \
           -F "pyRequirements=pandas" \
-          -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py" \
-          >> $GITHUB_OUTPUT
+          -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py"
+        outputs:
+          output: ${{ steps.run_curl.outputs.stdout }}
+        #>> $GITHUB_OUTPUT
 
       # strzelac Get po joba po nazwie oczekując aż wstanie
       - name: for the creation of a "Load data to Bronze" job

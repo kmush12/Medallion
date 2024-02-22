@@ -72,8 +72,7 @@ jobs:
           
           echo $GROUP_ID
           
-          echo "groupId=$(echo "$GROUP_ID" | jq -r ".groupId" )" >> $GITHUB_OUTPUT
-
+          echo "groupId=$(echo "$GROUP_ID" | jq '.groupId' )" >> $GITHUB_OUTPUT
 
       - name: Test groupId
         run: |

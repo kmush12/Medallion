@@ -31,8 +31,14 @@ jobs:
           sudo install kubectl /usr/local/bin/kubectl
           kubectl version --client=true
 
-      - name: Forward Ilum-core port
-        run: kubectl port-forward -n default svc/ilum-core 9888:9888
+#      - name: Forward Ilum-core port
+#        run: kubectl port-forward -n default svc/ilum-core 9888:9888
+
+      - name: Forward port 9888 to service ilum-core
+        uses: nektos/act-port-forward@v1
+        with:
+          local_port: 9888
+          remote_service: svc/ilum-core
 #Load data to Bronze
 
       # jak sparsować kod z pliku i wrzucić w curl, może wystarczy ścieżke podać

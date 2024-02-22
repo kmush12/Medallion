@@ -33,10 +33,7 @@ jobs:
 
 #      - name: Forward Ilum-core port
 #        run: kubectl port-forward -n default svc/ilum-core 9888:9888
-  Port-forward:
-    runs-on: self-hosted
-    needs: Release
-    steps:
+
       - name: Forward port 9888 to service ilum-core
         run: |
           kubectl port-forward -n default svc/ilum-core 9888:9888

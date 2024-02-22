@@ -36,8 +36,8 @@ jobs:
 
       - name: Forward port 9888 to service ilum-core
         run: |
-          kubectl port-forward -n default svc/ilum-core 9888:9888
-          sleep 10s
+          kubectl port-forward -n default svc/ilum-core 9888:9888 &
+        # sleep 10s
 #Load data to Bronze
 
       # jak sparsować kod z pliku i wrzucić w curl, może wystarczy ścieżke podać

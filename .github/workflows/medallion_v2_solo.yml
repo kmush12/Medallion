@@ -49,10 +49,11 @@ jobs:
           -F "scale=1" \
           -F "pyRequirements=pandas" \
           -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py"
-        #>> $GITHUB_OUTPUT
+          jq '.groupId'
+          >> $GITHUB_OUTPUT
 
       # strzelac Get po joba po nazwie oczekując aż wstanie
-      - name: for the creation of a "Load data to Bronze" job
+      - name: Wait for the creation of a "Load data to Bronze" job
         uses: nick-fields/retry@v3
         with:
           timeout_minutes: 11

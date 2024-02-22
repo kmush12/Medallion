@@ -24,6 +24,8 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Install kubectl
+        uses: actions-hub/kubectl@master
 
       - name: Forward Ilum-core port
         run: kubectl port-forward svc/ilum-core 9888:9888

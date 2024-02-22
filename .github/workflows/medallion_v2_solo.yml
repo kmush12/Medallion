@@ -17,7 +17,7 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           repository: kmush12/Medallion
-          token: ${{ secrets.GITHUB_TOKEN }} #${{ secrets.GIT_TOKEN }}  gdzie secrety są, chyba wszystko jawnie na blogu
+          token: ${{ secrets.GITHUB_TOKEN }}
 
 #jakoś port forward na cora, żeby było gdzie strzelać
 
@@ -37,7 +37,7 @@ jobs:
           -F "language=python" \
           -F "scale=1" \
           -F "pyRequirements=pandas" \
-          -F "pyFiles=@Medalion/Jobs/load_data_to_bronze.py" \
+          -F "pyFiles=@/Jobs/load_data_to_bronze.py" \
           >> $GITHUB_OUTPUT
 
       # strzelac Get po joba po nazwie oczekując aż wstanie

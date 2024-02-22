@@ -71,7 +71,7 @@ jobs:
           -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py" 
           jq -r '.groupId') 
           
-          echo "DDDDDD   $groupId"
+          echo "DDDDDD   $(groupId | jq -r '.groupId')"
         
 
       - name: Test groupId

@@ -59,7 +59,7 @@ jobs:
         run: |
           echo XXXXXXXXXXXx
           
-          curl -X POST "http://localhost:9888/api/v1/group" 
+          curl -X POST "http://localhost:9888/api/v1/group" \
           -H "Accept: application/json" \
           -H "Content-Type: multipart/form-data" \
           -F "name=$JOB_1_NAME" \

@@ -31,12 +31,6 @@ jobs:
           sudo install kubectl /usr/local/bin/kubectl
           kubectl version --client=true
 
-      - name: Enable runner access to Ilum's namespace
-        run: kubectl apply -f /runner/_work/Medallion/Medallion/.github/Test/list-services.yaml
-
-      - name: Enable runner access to Ilum's namespacessss
-        run: kubectl apply -f /runner/_work/Medallion/Medallion/.github/Test/list-services-binding.yaml
-
       - name: Forward Ilum-core port
         run: kubectl port-forward -n default svc/ilum-core 9888:9888
 #Load data to Bronze

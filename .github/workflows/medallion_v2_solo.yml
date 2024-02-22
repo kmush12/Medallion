@@ -57,6 +57,8 @@ jobs:
       - name: v2
         id: req
         run: |
+          echo XXXXXXXXXXXx
+          
           groupId=$(curl -X POST "http://localhost:9888/api/v1/group" \
           -H "Accept: application/json" \
           -H "Content-Type: multipart/form-data" \
@@ -68,7 +70,8 @@ jobs:
           -F "pyRequirements=pandas" \
           -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py" 
           jq -r '.groupId') 
-          echo $groupId
+          
+          echo "DDDDDD   $groupId"
         
 
       - name: Test groupId

@@ -51,8 +51,9 @@ jobs:
           -F "scale=1" \
           -F "pyRequirements=pandas" \
           -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py"
-          output="groupId=$(jq '.groupId') "
-          >> $GITHUB_OUTPUT
+          echo $(jq '.groupId')
+#          output="groupId=$(jq '.groupId') "
+#          >> $GITHUB_OUTPUT
 
       - name: Test groupId
         run: |

@@ -36,7 +36,7 @@ jobs:
 #Load data to Bronze
 
       # jak sparsować kod z pliku i wrzucić w curl, może wystarczy ścieżke podać
-      # zapisać groupId z response na zmienną środowiskową
+      # zapisać groupId z response na zmienną środowiskowąa
       - name: Create "Load data to Bronze" Job
         id: create_1_job
         run: |

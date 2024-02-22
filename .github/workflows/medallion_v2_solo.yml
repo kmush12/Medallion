@@ -70,13 +70,13 @@ jobs:
           -F "pyRequirements=pandas" \
           -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py")
           
-          echo $GROUP_ID
+          echo "groupId=$(echo "$GROUP_ID" | jq '.groupId' )" >> $GITHUB_OUTPUT
           
           echo "groupId=$(echo "$GROUP_ID" | jq '.groupId' )" >> $GITHUB_OUTPUT
 
       - name: Test groupId
         run: |
-          echo "Używam groupId: ${{ steps.ref.outputs.groupId }}"
+          echo "Używam groupId: ${{ cat $GITHUB_OUTPUT  }}"
       # ${{ steps.create_1_job.outputs.test }}
       # strzelac Get po joba po nazwie oczekując aż wstaniee
       - name: Wait for the creation of a "Load data to Bronze" job

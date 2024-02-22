@@ -52,6 +52,9 @@ jobs:
           jq '.groupId'
           >> $GITHUB_OUTPUT
 
+      - name: Test groupId
+        run: echo jobs.create_1_job.outputs
+
       # strzelac Get po joba po nazwie oczekując aż wstanie
       - name: Wait for the creation of a "Load data to Bronze" job
         uses: nick-fields/retry@v3
@@ -64,7 +67,7 @@ jobs:
             -H "Accept: application/json"
 
       - name: Execute "Load data to Bronze" Job
-        #synchroniczny endpoint
+        #synchroniczny endpoint !!!
         #JOB_ID_1 = steps.run_tests.outputs.
         # jak wyciągnąc groupID z poprzedniego stage i wrzucic w url poniżej
         run: |

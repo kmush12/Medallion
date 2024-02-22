@@ -17,7 +17,7 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           repository: kmush12/Medallion
-          token: $GIT_TOKEN #${{ secrets.GIT_TOKEN }}  gdzie secrety są, chyba wszystko jawnie na blogu
+          token: ${{ secrets.GITHUB_TOKEN }} #${{ secrets.GIT_TOKEN }}  gdzie secrety są, chyba wszystko jawnie na blogu
 
 #jakoś port forward na cora, żeby było gdzie strzelać
 

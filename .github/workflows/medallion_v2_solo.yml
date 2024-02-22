@@ -38,20 +38,20 @@ jobs:
 #Load data to Bronze
 
       # zapisać groupId z JSON response na zmienną środowiskowąa
-      - name: Create "Load data to Bronze" Job
-        id: create_1_job
-        run: |
-          curl -X POST "http://localhost:9888/api/v1/group" \
-          -H "Accept: application/json" \
-          -H "Content-Type: multipart/form-data" \
-          -F "name=$JOB_1_NAME" \
-          -F "clusterName=default" \
-          -F "kind=job" \
-          -F "language=python" \
-          -F "scale=1" \
-          -F "pyRequirements=pandas" \
-          -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py"
-          echo $(jq -r '.groupId')
+#      - name: Create "Load data to Bronze" Job
+#        id: create_1_job
+#        run: |
+#          curl -X POST "http://localhost:9888/api/v1/group" \
+#          -H "Accept: application/json" \
+#          -H "Content-Type: multipart/form-data" \
+#          -F "name=$JOB_1_NAME" \
+#          -F "clusterName=default" \
+#          -F "kind=job" \
+#          -F "language=python" \
+#          -F "scale=1" \
+#          -F "pyRequirements=pandas" \
+#          -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py"
+#          echo $(jq -r '.groupId')
 #          output="groupId=$(jq '.groupId') "
 #          >> $GITHUB_OUTPUT
       - name: v2
@@ -66,8 +66,8 @@ jobs:
           -F "language=python" \
           -F "scale=1" \
           -F "pyRequirements=pandas" \
-          -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py"}
-          }' | jq -r '.groupId'); "groupId=$groupId" >> $GITHUB_OUTPUT
+          -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py"
+           jq -r '.groupId'); "groupId=$groupId" >> $GITHUB_OUTPUT
         
 
       - name: Test groupId

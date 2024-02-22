@@ -56,8 +56,8 @@ jobs:
 
       - name: Test groupId
         run: |
-          echo "GroupId: ${{ steps.create_1_job.outputs.test }}"
-
+          echo "GroupId: $GITHUB_OUTPUT"
+      # ${{ steps.create_1_job.outputs.test }}
       # strzelac Get po joba po nazwie oczekując aż wstaniee
       - name: Wait for the creation of a "Load data to Bronze" job
         uses: nick-fields/retry@v3

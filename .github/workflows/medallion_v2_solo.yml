@@ -55,7 +55,7 @@ jobs:
           >> $GITHUB_OUTPUT
 
       - name: Test groupId
-        run: echo "OUTPUT1"
+        run: echo "$OUTPUT1"
 
       # strzelac Get po joba po nazwie oczekując aż wstanie
       - name: Wait for the creation of a "Load data to Bronze" job

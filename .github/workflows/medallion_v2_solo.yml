@@ -55,7 +55,8 @@ jobs:
           >> $GITHUB_OUTPUT
 
       - name: Test groupId
-        run: echo "$OUTPUT1"
+        run: |
+          echo "GroupId: ${{ steps.create_1_job.outputs.groupId }}"
 
       # strzelac Get po joba po nazwie oczekując aż wstanie
       - name: Wait for the creation of a "Load data to Bronze" job

@@ -44,7 +44,7 @@ jobs:
           -F "language=python" \
           -F "scale=1" \
           -F "pyRequirements=pandas" \
-          -F "pyFiles=@/home/runner/work/Medallion/Jobs/load_data_to_bronze.py" \
+          -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py" \
           >> $GITHUB_OUTPUT
 
       # strzelac Get po joba po nazwie oczekując aż wstanie

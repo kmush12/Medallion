@@ -25,9 +25,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
 
-      - name: List files in the repository ls
-        run: |
-          ls
+      - name: Forward Ilum-core port
+        run: kubectl port-forward svc/ilum-core 9888:9888
 #Load data to Bronze
 
       # jak sparsować kod z pliku i wrzucić w curl, może wystarczy ścieżke podać

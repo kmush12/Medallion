@@ -11,6 +11,8 @@ env:
 jobs:
   Release: # jakaś nazwa dla tej sekcji
     runs-on: self-hosted
+    outputs:
+      output1: ${{ steps.create_1_job.outputs.test }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -53,7 +55,7 @@ jobs:
           >> $GITHUB_OUTPUT
 
       - name: Test groupId
-        run: echo "Outputs  ${{ jobs.create_1_job.outputs }}"
+        run: echo "Outputs ${{ steps.create_1_job.outputs }}"
 
       # strzelac Get po joba po nazwie oczekując aż wstanie
       - name: Wait for the creation of a "Load data to Bronze" job

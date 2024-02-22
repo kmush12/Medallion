@@ -9,7 +9,7 @@ env:
   GIT_TOKEN: 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
 
 jobs:
-  Release:
+  Release: # jakaś nazwa dla tej sekcji
     runs-on: self-hosted
     steps:
       - name: Checkout
@@ -33,12 +33,13 @@ jobs:
 
 #      - name: Forward Ilum-core port
 #        run: kubectl port-forward -n default svc/ilum-core 9888:9888
-
+  Port-forward:
+    runs-on: self-hosted
+    steps:
       - name: Forward port 9888 to service ilum-core
-        uses: nektos/act-port-forward@v1
-        with:
-          local_port: 9888
-          remote_service: svc/ilum-core
+        run: |
+          kubectl port-forward -n default svc/ilum-core 9888:9888
+          sleep 10s
 #Load data to Bronze
 
       # jak sparsować kod z pliku i wrzucić w curl, może wystarczy ścieżke podać

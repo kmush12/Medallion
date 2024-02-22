@@ -54,10 +54,25 @@ jobs:
           echo $(jq -r '.groupId')
 #          output="groupId=$(jq '.groupId') "
 #          >> $GITHUB_OUTPUT
+      - name: v2
+        id: req
+        run: |
+          groupId=$(curl -X POST "http://localhost:9888/api/v1/group" \
+          -H "Accept: application/json" \
+          -H "Content-Type: multipart/form-data" \
+          -F "name=$JOB_1_NAME" \
+          -F "clusterName=default" \
+          -F "kind=job" \
+          -F "language=python" \
+          -F "scale=1" \
+          -F "pyRequirements=pandas" \
+          -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py"}
+          }' | jq -r '.groupId'); "groupId=$groupId" >> $GITHUB_OUTPUT
+        
 
       - name: Test groupId
         run: |
-          echo "GroupId: ${{ steps.create_1_job.outputs.groupId }}"
+          echo "GroupId: ${{ steps.req.outputs.groupId }}"
       # ${{ steps.create_1_job.outputs.test }}
       # strzelac Get po joba po nazwie oczekując aż wstaniee
       - name: Wait for the creation of a "Load data to Bronze" job

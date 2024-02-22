@@ -21,6 +21,13 @@ jobs:
 
 #jakoś port forward na cora, żeby było gdzie strzelać
 
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+
+      - name: List files in the repository ls
+        run: |
+          ls
 #Load data to Bronze
 
       # jak sparsować kod z pliku i wrzucić w curl, może wystarczy ścieżke podać

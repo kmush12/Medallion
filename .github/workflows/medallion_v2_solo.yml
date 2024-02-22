@@ -9,7 +9,7 @@ env:
   GIT_TOKEN: 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
 
 jobs:
-  Release: # jakaś nazwa dla tej sekcji
+  Release: # jakaś nazwa dla tej sekcjii
     runs-on: self-hosted
     outputs:
       output1: ${{ steps.create_1_job.outputs.groupId }}

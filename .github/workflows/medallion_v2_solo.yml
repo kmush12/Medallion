@@ -24,12 +24,12 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: Download kubectl
-        run: curl -LO https://dl.k8s.io/release/v1.24.7/bin/linux/amd64/kubectl
-      - name: Make kubectl executable
-        run: chmod +x kubectl
-      - name: Add kubectl to PATH
-        run: echo '$HOME/bin' >> ~/.bashrc && source ~/.bashrc && mv kubectl $HOME/bin
+      - name: Install kubectl
+        shell: bash
+        run: |
+          curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
+          sudo install kubectl /usr/local/bin/kubectl
+          kubectl version --client=true
 
       - name: Forward Ilum-core port
         run: kubectl port-forward svc/ilum-core 9888:9888

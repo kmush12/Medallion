@@ -12,7 +12,7 @@ jobs:
   Release: # jakaś nazwa dla tej sekcji
     runs-on: self-hosted
     outputs:
-      output1: ${{ steps.create_1_job.outputs.test }}
+      output1: ${{ steps.create_1_job.outputs.groupId }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

@@ -6,7 +6,6 @@ env:
   JOB_1_NAME: load_data_to_bronze
   JOB_2_NAME: bronze_to_silver
   JOB_3_NAME: silver_to_gold
-  GIT_TOKEN: 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 # chyba nie potrzebne
 
 jobs:
   Release: # jakaś nazwa dla tej sekcjii
@@ -49,10 +48,6 @@ jobs:
           -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py")
           echo $GROUP_ID
           echo "groupId=$(echo "$GROUP_ID" | jq -r '.groupId' )" >> $GITHUB_OUTPUT
-
-      - name: Group id
-        run: |
-          echo "GroupId: ${{ steps.create_load_data.outputs.groupId }}"
 
       - name: Group state check
         id: check_group_status

@@ -57,20 +57,6 @@ jobs:
         run: |
           echo "GroupId: ${{ steps.req.outputs.groupId }}"
 
-      # strzelac Get po joba po nazwie oczekując aż wstaniee
-      #nie czeka tylko co dostanie to weżmie
-#      - name: Wait for the creation of a "Load data to Bronze" job
-#        uses: nick-fields/retry@v3
-#        id: retry
-#        continue-on-error: true
-#        with:
-#          timeout_minutes: 11
-#          max_attempts: 10
-#          retry_wait_seconds: 60
-#          command: |
-#            curl -X GET "http://localhost:9888/api/v1/group/name/$JOB_1_NAME" \
-#            -H "Accept: application/json"
-
 #      - name: Group state check
 #        id: check_group_status
 #        run: |
@@ -89,8 +75,8 @@ jobs:
             response=$(curl -X GET "http://localhost:9888/api/v1/group/name/$JOB_1_NAME" \
               -H "Accept: application/json")
 
-            all_states=$(jq -r '.jobs[].state' <<< "$response")
-            if [[ $all_states =~ "READY" ]]; then
+            STATE=$(jq -r '.jobs[].state' <<< "$response")
+            if [[ $STATE = READY ]]; then
               echo "Group is ready!"
               break
             fi

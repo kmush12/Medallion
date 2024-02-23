@@ -37,7 +37,7 @@ jobs:
       - name: Create "Load data to Bronze" Interactive Job
         id: create_load_data
         run: |
-          GROUP_ID=$(curl -X POST "http://localhost:9888/api/v1/group" \
+          GROUP_1_ID=$(curl -X POST "http://localhost:9888/api/v1/group" \
           -H "Accept: application/json" \
           -H "Content-Type: multipart/form-data" \
           -F "name=$JOB_1_NAME" \
@@ -47,8 +47,8 @@ jobs:
           -F "scale=1" \
           -F "pyRequirements=pandas" \
           -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py")
-          echo $GROUP_ID
-          echo "groupId=$(echo "$GROUP_ID" | jq -r '.groupId' )" >> $GITHUB_OUTPUT
+          echo $GROUP_1_ID
+          echo "groupId=$(echo "$GROUP_1_ID" | jq -r '.groupId' )" >> $GITHUB_OUTPUT
 
       - name: Group state check
         run: |
@@ -78,7 +78,7 @@ jobs:
           if [[ "$RESULT" == "Loading raw data to bronze layer complete!" ]]; then
             echo "$RESULT"
           else
-            echo "echo "Data load failed! Result: $result""
+            echo "echo "Data load failed! Response: $response"
             exit 1
           fi
 
@@ -97,7 +97,7 @@ jobs:
       - name: Create "Bronze to Silver" Interactive Job
         id: create_bronze_silver
         run: |
-          GROUP_ID=$(curl -X POST "http://localhost:9888/api/v1/group" \
+          GROUP_2_ID=$(curl -X POST "http://localhost:9888/api/v1/group" \
           -H "Accept: application/json" \
           -H "Content-Type: multipart/form-data" \
           -F "name=$JOB_2_NAME" \
@@ -107,9 +107,9 @@ jobs:
           -F "scale=1" \
           -F "pyRequirements=pandas" \
           -F "jobConfig=spark.jars.packages=io.delta:delta-core_2.12:2.4.0;spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension;spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog" \
-          -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/bronze_to_silver.py") \
-          echo $GROUP_ID
-          echo "groupId=$(echo "$GROUP_ID" | jq -r '.groupId' )" >> $GITHUB_OUTPUT
+          -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/bronze_to_silver.py")
+          echo $GROUP_2_ID
+          echo "groupId=$(echo "$GROUP_2_ID" | jq -r '.groupId' )" >> $GITHUB_OUTPUT
 
       - name: Group state check
         run: |

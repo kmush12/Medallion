@@ -63,7 +63,7 @@ jobs:
             fi
           
             echo "Group is not ready. Wait..."
-            sleep 15 
+            sleep 20
           done
 
       - name: Execute "Load data to Bronze" Job
@@ -91,8 +91,6 @@ jobs:
         run: |
           curl -X DELETE "http://localhost:9888/api/v1/group/${{ steps.create_load_data.outputs.groupId }}" \
           -H "Accept: application/json"
-          
-
 
     #Bronze to Silver
           
@@ -126,7 +124,7 @@ jobs:
             fi
           
             echo "Group is not ready. Wait..."
-            sleep 15 
+            sleep 20
           done
 
       - name: Execute "Bronze to Silver" Job
@@ -144,7 +142,16 @@ jobs:
             echo "echo "Data load failed! Response: $response""
             exit 1
           fi    
-          
+
+      - name: Stop "Bronze to Silver" group
+        run: |
+          curl -X POST "http://localhost:9888/api/v1/group/${{ steps.create_bronze_silver.outputs.groupId }}/stop" \
+          -H "Accept: application/json"
+
+      - name: Delete "Bronze to Silver" group
+        run: |
+          curl -X DELETE "http://localhost:9888/api/v1/group/${{ steps.create_bronze_silver.outputs.groupId }}" \
+          -H "Accept: application/json"
           
           
           

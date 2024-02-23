@@ -89,11 +89,10 @@ jobs:
             response=$(curl -X GET "http://localhost:9888/api/v1/group/name/$JOB_1_NAME" \
               -H "Accept: application/json")
 
-      # Extract job states and check if any are "READY"
             all_states=$(jq -r '.jobs[].state' <<< "$response")
             if [[ $all_states =~ "READY" ]]; then
               echo "Group is ready!"
-              break  # Exit the loop
+              break
             fi
           
             echo "Group is not ready. Wait..."

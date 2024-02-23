@@ -82,10 +82,17 @@ jobs:
             exit 1
           fi
 
+      - name: Stop "Load data to Bronze" group
+        run: |
+          curl -X POST "http://localhost:9888/api/v1/group/${{ steps.create_load_data.outputs.groupId }}/stop" \
+          -H "Accept: application/json"
+
       - name: Delete "Load data to Bronze" group
         run: |
           curl -X DELETE "http://localhost:9888/api/v1/group/${{ steps.create_load_data.outputs.groupId }}" \
           -H "Accept: application/json"
+          
+
 
     #Bronze to Silver
           

@@ -58,15 +58,29 @@ jobs:
           echo "GroupId: ${{ steps.req.outputs.groupId }}"
 
       # strzelac Get po joba po nazwie oczekując aż wstaniee
+      #nie czeka tylko co dostanie to weżmie
       - name: Wait for the creation of a "Load data to Bronze" job
         uses: nick-fields/retry@v3
+        id: retry
+        continue-on-error: true
         with:
           timeout_minutes: 11
           max_attempts: 10
           retry_wait_seconds: 60
           command: |
-            curl -X GET "http://localhost:9888/api/v1/group/name/$JOB_1_NAME" \
-            -H "Accept: application/json"
+            GROUP_STATE=$(curl -X GET "http://localhost:9888/api/v1/group/name/$JOB_1_NAME" \
+            -H "Accept: application/json")
+            
+            echo "groupState=$(echo "$GROUP_STATE" | jq -r '.state' )" >> $GITHUB_OUTPUT
+#            curl -X GET "http://localhost:9888/api/v1/group/name/load_data_to_bronze" \
+#            -H "Accept: application/json"
+#            "state":"READY"
+      - name: Assert that status is ready
+        uses: nick-fields/assert-action@v1
+        with:
+          expected: READY
+          actual: ${{ steps.retry.outputs.groupState }}
+
 
       - name: Execute "Load data to Bronze" Job
         #synchroniczny endpoint !!!

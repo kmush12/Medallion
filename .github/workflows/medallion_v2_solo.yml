@@ -37,7 +37,7 @@ jobs:
 
 #Load data to Bronze
 
-      - name: v2
+      - name: v2 #do zmiany
         id: req # do zmiany
         run: |
           GROUP_ID=$(curl -X POST "http://localhost:9888/api/v1/group" \
@@ -57,17 +57,6 @@ jobs:
         run: |
           echo "GroupId: ${{ steps.req.outputs.groupId }}"
 
-#      - name: Group state check
-#        id: check_group_status
-#        run: |
-#          while true; do
-#            curl -X GET "http://localhost:9888/api/v1/group/name/$JOB_1_NAME" \
-#              -H "Accept: application/json" \
-#              -s | jq -r '.jobs[].state' | grep -c READY || sleep 15
-#            echo "Group is not ready. Wait..."
-#          done
-#          echo "Group is ready!"
-
       - name: Group state check
         id: check_group_status
         run: |
@@ -85,12 +74,36 @@ jobs:
             sleep 15 
           done
 
+#      - name: Execute "Load data to Bronze" Job
+#        run: |
+#          curl -X POST "http://localhost:9888/api/v1/group/${{ steps.req.outputs.groupId }}/job/execute" \
+#          -H "Accept: application/json" \
+#          -H "Content-Type: application/json" \
+#          -d '{"type":"interactive_job_execute","jobClass":"load_data_to_bronze.RawDataToBronze","jobConfig":{"animals_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/animals.csv","owners_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/owners.csv","species_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/species.csv","animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv"}}'
+#         "result":"Loading raw data to bronze layer complete!"
       - name: Execute "Load data to Bronze" Job
-        #synchroniczny endpoint !!!
-        #JOB_ID_1 = steps.run_tests.outputs.
-        # jak wyciągnąc groupID z poprzedniego stage i wrzucic w url poniżej
         run: |
-          curl -X POST "http://localhost:9888/api/v1/group/${{ steps.req.outputs.groupId }}/job/execute" \
+          response=$(curl -X POST "http://localhost:9888/api/v1/group/${{ steps.req.outputs.groupId }}/job/execute" \
           -H "Accept: application/json" \
           -H "Content-Type: application/json" \
-          -d '{"type":"interactive_job_execute","jobClass":"load_data_to_bronze.RawDataToBronze","jobConfig":{"animals_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/animals.csv","owners_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/owners.csv","species_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/species.csv","animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv"}}'
+          -d '{"type":"interactive_job_execute","jobClass":"load_data_to_bronze.RawDataToBronze","jobConfig":{"animals_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/animals.csv","owners_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/owners.csv","species_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/species.csv","animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv"}}')
+          
+          RESULT=$(jq -r '.result' <<< "$response")
+          
+          if [[ "$RESULT" == "Loading raw data to bronze layer complete!" ]]; then
+            echo "$RESULT"
+          else
+            echo "echo "Data load failed! Result: $result""
+            exit 1
+          fi
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          

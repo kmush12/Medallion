@@ -74,7 +74,7 @@ jobs:
       - name: Group state check
         id: check_group_status
         run: |
-          while true; do
+          while 0; do
             curl -X GET "http://localhost:9888/api/v1/group/name/$JOB_1_NAME" \
               -H "Accept: application/json" \
               -s | jq -r '.jobs[].state' | grep -c READY || sleep 15

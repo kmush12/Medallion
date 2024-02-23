@@ -57,7 +57,7 @@ jobs:
       - name: v2
         id: req
         run: |
-          echo XXXXXXXXXXXx
+          echo XXXXXXXXXXXX
           
           GROUP_ID=$(curl -X POST "http://localhost:9888/api/v1/group" \
           -H "Accept: application/json" \
@@ -69,8 +69,8 @@ jobs:
           -F "scale=1" \
           -F "pyRequirements=pandas" \
           -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py")
-          
-          echo "groupId=$(echo '$GROUP_ID ' | jq '.groupId' )" >> $GITHUB_OUTPUT
+          echo $GROUP_ID
+          echo "groupId=$(echo "$GROUP_ID" | jq -r '.groupId' )" >> $GITHUB_OUTPUT
 
       - name: Test groupId
         run: |

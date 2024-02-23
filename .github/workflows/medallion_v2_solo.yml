@@ -141,7 +141,7 @@ jobs:
           if [[ "$RESULT" == "Processing data from bronze to silver complete!" ]]; then
             echo "$RESULT"
           else
-            echo "echo "Data load failed! Result: $result""
+            echo "echo "Data load failed! Response: $response""
             exit 1
           fi    
           

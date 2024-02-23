@@ -78,7 +78,7 @@ jobs:
           if [[ "$RESULT" == "Loading raw data to bronze layer complete!" ]]; then
             echo "$RESULT"
           else
-            echo "echo "Data load failed! Response: $response"
+            echo "echo "Data load failed! Response: $response""
             exit 1
           fi
 

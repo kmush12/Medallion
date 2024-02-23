@@ -82,7 +82,12 @@ jobs:
             exit 1
           fi
 
-#Bronze to Silver
+      - name: Delete "Load data to Bronze" group
+        run: |
+          curl -X DELETE "http://localhost:9888/api/v1/group/${{ steps.create_load_data.outputs.groupId }}" \
+          -H "Accept: application/json"
+
+    #Bronze to Silver
           
       - name: Create "Bronze to Silver" Interactive Job
         id: create_bronze_silver

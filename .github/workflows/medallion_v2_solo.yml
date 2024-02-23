@@ -71,16 +71,16 @@ jobs:
 #            curl -X GET "http://localhost:9888/api/v1/group/name/$JOB_1_NAME" \
 #            -H "Accept: application/json"
 
-      - name: Sprawdź status grupy
+      - name: Group state check
         id: check_group_status
         run: |
           while true; do
             curl -X GET "http://localhost:9888/api/v1/group/name/$JOB_1_NAME" \
               -H "Accept: application/json" \
-              -s | jq '.state' | grep -q READY || sleep 1
-            echo "Grupa nie jest jeszcze gotowa. Czekam..."
+              -s | jq '.state' | grep -q READY || sleep 25
+            echo "Group is not ready. Wait..."
           done
-          echo "Grupa jest gotowa!"
+          echo "Group is ready!"
 
 
       - name: Execute "Load data to Bronze" Job

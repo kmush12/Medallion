@@ -77,7 +77,7 @@ jobs:
           while true; do
             curl -X GET "http://localhost:9888/api/v1/group/name/$JOB_1_NAME" \
               -H "Accept: application/json" \
-              -s | jq '.state' | grep -q READY || sleep 25
+              -s | jq -r '.state' | grep -q READY || sleep 25
             echo "Group is not ready. Wait..."
           done
           echo "Group is ready!"

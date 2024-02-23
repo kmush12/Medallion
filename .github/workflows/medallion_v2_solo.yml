@@ -96,8 +96,8 @@ jobs:
           -F "language=python" \
           -F "scale=1" \
           -F "pyRequirements=pandas" \
+          -F "jobConfig=spark.jars.packages=io.delta:delta-core_2.12:2.4.0;spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension;spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog" \
           -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/bronze_to_silver.py") \
-          --form-string 'jobConfig=spark.jars.packages=io.delta:delta-core_2.12:2.4.0;spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension;spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog'
           echo $GROUP_ID
           echo "groupId=$(echo "$GROUP_ID" | jq -r '.groupId' )" >> $GITHUB_OUTPUT
 

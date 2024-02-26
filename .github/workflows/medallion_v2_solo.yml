@@ -93,6 +93,7 @@ jobs:
     #Bronze to Silver
   Silver: # jakaś nazwa dla tej sekcjii
     runs-on: self-hosted
+    needs: Bronze
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -178,6 +179,7 @@ jobs:
 #Silver to Gold
   Gold: # jakaś nazwa dla tej sekcjii
     runs-on: self-hosted
+    needs: Silver
     steps:
       - name: Checkout
         uses: actions/checkout@v4

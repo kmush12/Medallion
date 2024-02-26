@@ -8,10 +8,8 @@ env:
   JOB_3_NAME: silver_to_gold
 
 jobs:
-  Release: # jakaś nazwa dla tej sekcjii
+  Bronze: # jakaś nazwa dla tej sekcjii
     runs-on: self-hosted
-    outputs:
-      output1: ${{ steps.create_1_job.outputs.groupId }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -93,6 +91,26 @@ jobs:
           -H "Accept: application/json"
 
     #Bronze to Silver
+  Silver: # jakaś nazwa dla tej sekcjii
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          repository: kmush12/Medallion
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install kubectl
+        shell: bash
+        run: |
+          curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
+          sudo install kubectl /usr/local/bin/kubectl
+          kubectl version --client=true
+
+      - name: Forward port 9888 to service ilum-core
+        run: |
+          kubectl port-forward -n default svc/ilum-core 9888:9888 &
 
       - name: Create "Bronze to Silver" Interactive Job
         id: create_bronze_silver
@@ -158,6 +176,22 @@ jobs:
           -H "Accept: application/json"
           
 #Silver to Gold
+  Gold: # jakaś nazwa dla tej sekcjii
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          repository: kmush12/Medallion
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install kubectl
+        shell: bash
+        run: |
+          curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
+          sudo install kubectl /usr/local/bin/kubectl
+          kubectl version --client=true
 
       - name: Create "Silver to Gold" Interactive Job
         id: create_silver_gold

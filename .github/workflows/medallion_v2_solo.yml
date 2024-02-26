@@ -93,7 +93,7 @@ jobs:
           -H "Accept: application/json"
 
     #Bronze to Silver
-          
+        #-F "jobConfig=spark.jars.packages=io.delta:delta-core_2.12:2.4.0;spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension;spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog" \
       - name: Create "Bronze to Silver" Interactive Job
         id: create_bronze_silver
         run: |
@@ -106,7 +106,7 @@ jobs:
           -F "language=python" \
           -F "scale=1" \
           -F "pyRequirements=pandas" \
-          -F "jobConfig=spark.jars.packages=io.delta:delta-core_2.12:2.4.0;spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension;spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog" \
+          --form-string "jobConfig=spark.jars.packages=io.delta:delta-core_2.12:2.4.0;spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension;spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog" \
           -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/bronze_to_silver.py")
           echo $GROUP_2_ID
           echo "groupId=$(echo "$GROUP_2_ID" | jq -r '.groupId' )" >> $GITHUB_OUTPUT

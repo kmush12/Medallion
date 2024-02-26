@@ -116,7 +116,7 @@ jobs:
           while true; do
             response=$(curl -X GET "http://localhost:9888/api/v1/group/name/$JOB_2_NAME" \
               -H "Accept: application/json")
-
+            
             STATE=$(jq -r '.jobs[].state' <<< "$response")
             if [[ $STATE = READY ]]; then
               echo "Group is ready!"
@@ -134,7 +134,11 @@ jobs:
           -H "Content-Type: application/json" \
           -d '{"type":"interactive_job_execute","jobClass":"bronze_to_silver.BronzeToSilver","jobConfig":{"animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv","animals_silver_path":"s3a://ilum-files/tables/silver/animals_delta","owners_silver_path":"s3a://ilum-files/tables/silver/owners_delta"}}')
           
+          echo $response
+          
           RESULT=$(jq -r '.result' <<< "$response")
+          
+          echo $RESULT
           
           if [[ "$RESULT" == "Processing data from bronze to silver complete!" ]]; then
             echo "$RESULT"

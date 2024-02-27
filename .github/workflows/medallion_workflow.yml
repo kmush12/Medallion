@@ -1,0 +1,229 @@
+name: Medalion
+
+on: [push]
+
+env:
+  JOB_1_NAME: load_data_to_bronze
+  JOB_2_NAME: bronze_to_silver
+  JOB_3_NAME: silver_to_gold
+  JOB_1_CORRECT_RESULT: Loading raw data to bronze layer complete!
+  JOB_2_CORRECT_RESULT: Processing data from bronze to silver complete!
+  JOB_3_CORRECT_RESULT: Processing data from silver to gold complete!
+
+jobs:
+  Bronze:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          repository: kmush12/Medallion
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install kubectl
+        run: |
+          curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
+          sudo install kubectl /usr/local/bin/kubectl
+
+      - name: Forward port 9888 to service ilum-core
+        run: kubectl port-forward -n default svc/ilum-core 9888:9888 &
+
+      - name: Create "Load data to Bronze" Interactive Job
+        id: create_load_data
+        run: |
+          GROUP_1_ID=$(curl -X POST "http://localhost:9888/api/v1/group" \
+          -H "Accept: application/json" \
+          -H "Content-Type: multipart/form-data" \
+          -F "name=$JOB_1_NAME" \
+          -F "clusterName=default" \
+          -F "kind=job" \
+          -F "language=python" \
+          -F "scale=1" \
+          -F "pyRequirements=pandas" \
+          -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py")
+          echo $GROUP_1_ID
+          echo "groupId=$(echo "$GROUP_1_ID" | jq -r '.groupId' )" >> $GITHUB_OUTPUT
+
+      - name: Group state check
+        run: |
+          while [[ $(curl -sL "http://localhost:9888/api/v1/group/name/$JOB_1_NAME" | jq -r '.jobs[].state') != "READY" ]]; do
+            echo "Group is not ready. Waiting..."
+            sleep 20
+          done
+
+          echo "Group is ready!"
+
+      - name: Execute "Load data to Bronze" Job
+        run: |
+          response=$(curl -X POST "http://localhost:9888/api/v1/group/${{ steps.create_load_data.outputs.groupId }}/job/execute" \
+          -H "Accept: application/json" \
+          -H "Content-Type: application/json" \
+          -d '{"type":"interactive_job_execute","jobClass":"load_data_to_bronze.RawDataToBronze","jobConfig":{"animals_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/animals.csv","owners_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/owners.csv","species_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/species.csv","animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv"}}')
+          
+          result=$(jq -r '.result' <<< "$response")
+          
+          if [[ "$result" == "$JOB_1_CORRECT_RESULT" ]]; then
+            echo "$result"
+          else
+            echo "echo "Data processing failed! Response: $response""
+            exit 1
+          fi
+
+      - name: Stop "Load data to Bronze" group
+        run: |
+          curl -X POST "http://localhost:9888/api/v1/group/${{ steps.create_load_data.outputs.groupId }}/stop" \
+          -H "Accept: application/json"
+
+      - name: Delete "Load data to Bronze" group
+        run: |
+          curl -X DELETE "http://localhost:9888/api/v1/group/${{ steps.create_load_data.outputs.groupId }}" \
+          -H "Accept: application/json"
+
+  Silver:
+    runs-on: self-hosted
+    needs: Bronze
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          repository: kmush12/Medallion
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install kubectl
+        run: |
+          curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
+          sudo install kubectl /usr/local/bin/kubectl
+
+      - name: Forward port 9888 to service ilum-core
+        run: kubectl port-forward -n default svc/ilum-core 9888:9888 &
+
+      - name: Create "Bronze to Silver" Interactive Job
+        id: create_bronze_silver
+        run: |
+          GROUP_2_ID=$(curl -X POST "http://localhost:9888/api/v1/group" \
+          -H "Accept: application/json" \
+          -H "Content-Type: multipart/form-data" \
+          -F "name=$JOB_2_NAME" \
+          -F "clusterName=default" \
+          -F "kind=job" \
+          -F "language=python" \
+          -F "scale=1" \
+          -F "pyRequirements=pandas" \
+          --form-string "jobConfig=spark.jars.packages=io.delta:delta-core_2.12:2.4.0;spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension;spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog" \
+          -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/bronze_to_silver.py")
+          echo $GROUP_2_ID
+          echo "groupId=$(echo "$GROUP_2_ID" | jq -r '.groupId' )" >> $GITHUB_OUTPUT
+
+      - name: Group state check
+        run: |
+          while [[ $(curl -sL "http://localhost:9888/api/v1/group/name/$JOB_2_NAME" | jq -r '.jobs[].state') != "READY" ]]; do
+            echo "Group is not ready. Waiting..."
+            sleep 20
+          done
+
+          echo "Group is ready!"
+
+      - name: Execute "Bronze to Silver" Job
+        run: |
+          response=$(curl -X POST "http://localhost:9888/api/v1/group/${{ steps.create_bronze_silver.outputs.groupId }}/job/execute" \
+          -H "Accept: application/json" \
+          -H "Content-Type: application/json" \
+          -d '{"type":"interactive_job_execute","jobClass":"bronze_to_silver.BronzeToSilver","jobConfig":{"animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv","animals_silver_path":"s3a://ilum-files/tables/silver/animals_delta","owners_silver_path":"s3a://ilum-files/tables/silver/owners_delta"}}')
+          
+          result=$(jq -r '.result' <<< "$response")
+          
+          if [[ "$result" == "$JOB_2_CORRECT_RESULT" ]]; then
+            echo "$result"
+          else
+            echo "echo "Data processing failed! Response: $response""
+            exit 1
+          fi    
+
+      - name: Stop "Bronze to Silver" group
+        run: |
+          curl -X POST "http://localhost:9888/api/v1/group/${{ steps.create_bronze_silver.outputs.groupId }}/stop" \
+          -H "Accept: application/json"
+
+      - name: Delete "Bronze to Silver" group
+        run: |
+          curl -X DELETE "http://localhost:9888/api/v1/group/${{ steps.create_bronze_silver.outputs.groupId }}" \
+          -H "Accept: application/json"
+
+  Gold:
+    runs-on: self-hosted
+    needs: Silver
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          repository: kmush12/Medallion
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install kubectl
+        run: |
+          curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
+          sudo install kubectl /usr/local/bin/kubectl
+
+      - name: Forward port 9888 to service ilum-core
+        run: kubectl port-forward -n default svc/ilum-core 9888:9888 &
+
+      - name: Create "Silver to Gold" Interactive Job
+        id: create_silver_gold
+        run: |
+          GROUP_3_ID=$(curl -X POST "http://localhost:9888/api/v1/group" \
+          -H "Accept: application/json" \
+          -H "Content-Type: multipart/form-data" \
+          -F "name=$JOB_3_NAME" \
+          -F "clusterName=default" \
+          -F "kind=job" \
+          -F "language=python" \
+          -F "scale=1" \
+          -F "pyRequirements=pandas" \
+          --form-string "jobConfig=spark.jars.packages=io.delta:delta-core_2.12:2.4.0;spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension;spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog" \
+          -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/silver_to_gold.py")
+          echo $GROUP_3_ID
+          echo "groupId=$(echo "$GROUP_3_ID" | jq -r '.groupId' )" >> $GITHUB_OUTPUT
+
+      - name: Group state check
+        run: |
+          while [[ $(curl -sL "http://localhost:9888/api/v1/group/name/$JOB_3_NAME" | jq -r '.jobs[].state') != "READY" ]]; do
+            echo "Group is not ready. Waiting..."
+            sleep 20
+          done
+
+          echo "Group is ready!"
+
+      - name: Execute "Silver to Gold" Job
+        run: |
+          response=$(curl -X POST "http://localhost:9888/api/v1/group/${{ steps.create_silver_gold.outputs.groupId }}/job/execute" \
+            -H "Accept: application/json" \
+            -H "Content-Type: application/json" \
+            -d '{"type":"interactive_job_execute","jobClass":"silver_to_gold.SilverToGold","jobConfig":{"animals_silver_path":"s3a://ilum-files/tables/silver/animals_delta","owners_silver_path":"s3a://ilum-files/tables/silver/owners_delta","animals_gold_path":"s3a://ilum-files/tables/gold/animals_delta","owners_gold_path":"s3a://ilum-files/tables/gold/owners_delta"}}')
+
+          result=$(jq -r '.result' <<< "$response")
+          
+          if [[ "$result" == "$JOB_3_CORRECT_RESULT" ]]; then
+            echo "$result"
+          else
+            echo "echo "Data processing failed! Response: $response""
+            exit 1
+          fi
+
+      - name: Stop "Silver to Gold" group
+        run: |
+          curl -X POST "http://localhost:9888/api/v1/group/${{ steps.create_silver_gold.outputs.groupId }}/stop" \
+          -H "Accept: application/json"
+
+      - name: Delete "Silver to Gold" group
+        run: |
+          curl -X DELETE "http://localhost:9888/api/v1/group/${{ steps.create_silver_gold.outputs.groupId }}" \
+          -H "Accept: application/json"
+          
+      - name: Medallion processing complete
+        run: echo "Medallion processing complete!"
+          
+          
+          

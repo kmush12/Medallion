@@ -20,16 +20,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install kubectl
-        uses: actions/setup-kubectl@v1
-        with:
-          version: v1.18.0
-
-#      - name: Install kubectl
-#        shell: bash # sprawdz czy bez tego przejdzie
-#        run: |
-#          curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
-#          sudo install kubectl /usr/local/bin/kubectl
-#          kubectl version --client=true
+        #   shell: bash sprawdz czy bez tego przejdzie
+        run: |
+          curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
+          sudo install kubectl /usr/local/bin/kubectl
+          kubectl version --client=true
 
       - name: Forward port 9888 to service ilum-core
         run: kubectl port-forward -n default svc/ilum-core 9888:9888 &

@@ -4,11 +4,8 @@ on: [push]
 
 env:
   JOB_1_NAME: load_data_to_bronze
-  JOB_1_CLASS: "load_data_to_bronze.RawDataToBronze"
   JOB_2_NAME: bronze_to_silver
-  JOB_2_CLASS: "bronze_to_silver.BronzeToSilver"
   JOB_3_NAME: silver_to_gold
-  JOB_3_CLASS: "silver_to_gold.SilverToGold"
   JOB_1_CORRECT_RESULT: Loading raw data to bronze layer complete!
   JOB_2_CORRECT_RESULT: Processing data from bronze to silver complete!
   JOB_3_CORRECT_RESULT: Processing data from silver to gold complete!
@@ -56,19 +53,18 @@ jobs:
           done
 
           echo "Group is ready!"
+
       - name: Execute "Load data to Bronze" Job
         run: |
           response=$(curl -X POST "http://localhost:9888/api/v1/group/${{ steps.create_load_data.outputs.groupId }}/job/execute" \
           -H "Accept: application/json" \
           -H "Content-Type: application/json" \
           -d '{"type":"interactive_job_execute","jobClass":"load_data_to_bronze.RawDataToBronze","jobConfig":{"animals_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/animals.csv","owners_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/owners.csv","species_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/species.csv","animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv"}}')
-
-          echo $response
           
-          RESULT=$(jq -r '.result' <<< "$response")
+          result=$(jq -r '.result' <<< "$response")
           
-          if [[ "$RESULT" == "$JOB_1_CORRECT_RESULT" ]]; then
-            echo "$RESULT"
+          if [[ "$result" == "$JOB_1_CORRECT_RESULT" ]]; then
+            echo "$result"
           else
             echo "echo "Data processing failed! Response: $response""
             exit 1
@@ -136,13 +132,10 @@ jobs:
           -H "Content-Type: application/json" \
           -d '{"type":"interactive_job_execute","jobClass":"bronze_to_silver.BronzeToSilver","jobConfig":{"animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv","animals_silver_path":"s3a://ilum-files/tables/silver/animals_delta","owners_silver_path":"s3a://ilum-files/tables/silver/owners_delta"}}')
           
-          RESULT=$(jq -r '.result' <<< "$response")
+          result=$(jq -r '.result' <<< "$response")
           
-          echo $RESULT
-          echo $JOB_2_CORRECT_RESULT
-          
-          if [[ "$RESULT" == "$JOB_2_CORRECT_RESULT" ]]; then
-            echo "$RESULT"
+          if [[ "$result" == "$JOB_2_CORRECT_RESULT" ]]; then
+            echo "$result"
           else
             echo "echo "Data processing failed! Response: $response""
             exit 1
@@ -210,11 +203,10 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{"type":"interactive_job_execute","jobClass":"silver_to_gold.SilverToGold","jobConfig":{"animals_silver_path":"s3a://ilum-files/tables/silver/animals_delta","owners_silver_path":"s3a://ilum-files/tables/silver/owners_delta","animals_gold_path":"s3a://ilum-files/tables/gold/animals_delta","owners_gold_path":"s3a://ilum-files/tables/gold/owners_delta"}}')
 
+          result=$(jq -r '.result' <<< "$response")
           
-          RESULT=$(jq -r '.result' <<< "$response")
-          
-          if [[ "$RESULT" == "$JOB_3_CORRECT_RESULT" ]]; then
-            echo "$RESULT"
+          if [[ "$result" == "$JOB_3_CORRECT_RESULT" ]]; then
+            echo "$result"
           else
             echo "echo "Data processing failed! Response: $response""
             exit 1

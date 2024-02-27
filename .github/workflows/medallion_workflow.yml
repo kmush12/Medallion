@@ -24,11 +24,11 @@ jobs:
           repository: kmush12/Medallion
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install kubectl
+      - name: Install kubectl #test czy bez kubectl version przejdzie
         run: |
           curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
           sudo install kubectl /usr/local/bin/kubectl
-          kubectl version --client=true
+          kubectl version --client=true 
 
       - name: Forward port 9888 to service ilum-core
         run: kubectl port-forward -n default svc/ilum-core 9888:9888 &
@@ -68,7 +68,7 @@ jobs:
           
           RESULT=$(jq -r '.result' <<< "$response")
           
-          if [[ "$RESULT" == "$JOB_1_CORRECT_RESULT" ]]; then
+          if [[ "$RESULT" == "Loading raw data to bronze layer complete!" ]]; then
             echo "$RESULT"
           else
             echo "echo "Data load failed! Response: $response""

@@ -137,11 +137,12 @@ jobs:
           response=$(curl -X POST "http://localhost:9888/api/v1/group/${{ steps.create_bronze_silver.outputs.groupId }}/job/execute" \
           -H "Accept: application/json" \
           -H "Content-Type: application/json" \
-          -d '{"type":"interactive_job_execute","jobClass":$JOB_2_CLASS,"jobConfig":{"animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv","animals_silver_path":"s3a://ilum-files/tables/silver/animals_delta","owners_silver_path":"s3a://ilum-files/tables/silver/owners_delta"}}')
+          -d '{"type":"interactive_job_execute","jobClass":"bronze_to_silver.BronzeToSilver","jobConfig":{"animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv","animals_silver_path":"s3a://ilum-files/tables/silver/animals_delta","owners_silver_path":"s3a://ilum-files/tables/silver/owners_delta"}}')
           
           RESULT=$(jq -r '.result' <<< "$response")
           
           echo $RESULT
+          echo $JOB_2_CORRECT_RESULT
           
           if [[ "$RESULT" == "$JOB_2_CORRECT_RESULT" ]]; then
             echo "$RESULT"

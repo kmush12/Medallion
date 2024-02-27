@@ -153,8 +153,6 @@ jobs:
           -H "Content-Type: application/json" \
           -d '{"type":"interactive_job_execute","jobClass":"bronze_to_silver.BronzeToSilver","jobConfig":{"animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv","animals_silver_path":"s3a://ilum-files/tables/silver/animals_delta","owners_silver_path":"s3a://ilum-files/tables/silver/owners_delta"}}')
           
-          echo $response
-          
           RESULT=$(jq -r '.result' <<< "$response")
           
           echo $RESULT
@@ -196,6 +194,10 @@ jobs:
           sudo install kubectl /usr/local/bin/kubectl
           kubectl version --client=true
 
+      - name: Forward port 9888 to service ilum-core
+        run: |
+          kubectl port-forward -n default svc/ilum-core 9888:9888 &
+
       - name: Create "Silver to Gold" Interactive Job
         id: create_silver_gold
         run: |
@@ -235,8 +237,6 @@ jobs:
           -H "Accept: application/json" \
           -H "Content-Type: application/json" \
           -d '{"type":"interactive_job_execute","jobClass":"silver_to_gold.SilverToGold","jobConfig":{"animals_silver_path":"s3a://ilum-files/tables/silver/animals_delta","owners_silver_path":"s3a://ilum-files/tables/silver/owners_delta","animals_gold_path":"s3a://ilum-files/tables/gold/animals_delta","owners_gold_path":"s3a://ilum-files/tables/gold/owners_delta"}}')
-          
-          echo $response
           
           RESULT=$(jq -r '.result' <<< "$response")
           

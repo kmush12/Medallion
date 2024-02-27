@@ -46,6 +46,7 @@ jobs:
           -F "scale=1" \
           -F "pyRequirements=pandas" \
           -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py")
+          echo $GROUP_1_ID
           echo "groupId=$(echo "$GROUP_1_ID" | jq -r '.groupId' )" >> $GITHUB_OUTPUT
 
       - name: Group state check
@@ -62,7 +63,7 @@ jobs:
           response=$(curl -X POST "http://localhost:9888/api/v1/group/${{ steps.create_load_data.outputs.groupId }}/job/execute" \
           -H "Accept: application/json" \
           -H "Content-Type: application/json" \
-          -d '{"type":"interactive_job_execute","jobClass":$JOB_1_CLASS,"jobConfig":{"animals_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/animals.csv","owners_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/owners.csv","species_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/species.csv","animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv"}}')
+          -d '{"type":"interactive_job_execute","jobClass":"load_data_to_bronze.RawDataToBronze","jobConfig":{"animals_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/animals.csv","owners_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/owners.csv","species_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/species.csv","animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv"}}')
           
           echo $response
           

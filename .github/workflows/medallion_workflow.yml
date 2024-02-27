@@ -56,25 +56,13 @@ jobs:
           done
 
           echo "Group is ready!"
-#           -d '{"type":"interactive_job_execute","jobClass":"load_data_to_bronze.RawDataToBronze","jobConfig":{"animals_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/animals.csv","owners_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/owners.csv","species_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/species.csv","animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv"}}')
       - name: Execute "Load data to Bronze" Job
         run: |
           response=$(curl -X POST "http://localhost:9888/api/v1/group/${{ steps.create_load_data.outputs.groupId }}/job/execute" \
           -H "Accept: application/json" \
           -H "Content-Type: application/json" \
-          -d '{
-              "type": "interactive_job_execute",
-              "jobClass": "load_data_to_bronze.RawDataToBronze",
-              "jobConfig": {
-                "animals_url": "https://raw.githubusercontent.com/kmush12/Medallion/master/animals.csv",
-                "owners_url": "https://raw.githubusercontent.com/kmush12/Medallion/master/owners.csv",
-                "species_url": "https://raw.githubusercontent.com/kmush12/Medallion/master/species.csv"
-                "animals_bronze_path": "s3a://ilum-files/tables/bronze/animals.csv",
-                "owners_bronze_path": "s3a://ilum-files/tables/bronze/owners.csv",
-                "species_bronze_path": "s3a://ilum-files/tables/bronze/species.csv"
-              }
-            }'
-          )
+          -d '{"type":"interactive_job_execute","jobClass":"load_data_to_bronze.RawDataToBronze","jobConfig":{"animals_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/animals.csv","owners_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/owners.csv","species_url":"https://raw.githubusercontent.com/kmush12/Medallion/master/species.csv","animals_bronze_path":"s3a://ilum-files/tables/bronze/animals.csv","owners_bronze_path":"s3a://ilum-files/tables/bronze/owners.csv","species_bronze_path":"s3a://ilum-files/tables/bronze/species.csv"}}')
+
           echo $response
           
           RESULT=$(jq -r '.result' <<< "$response")
@@ -220,17 +208,8 @@ jobs:
           response=$(curl -X POST "http://localhost:9888/api/v1/group/${{ steps.create_silver_gold.outputs.groupId }}/job/execute" \
             -H "Accept: application/json" \
             -H "Content-Type: application/json" \
-            -d '{
-              "type": "interactive_job_execute",
-              "jobClass": "silver_to_gold.SilverToGold",
-              "jobConfig": {
-                "animals_silver_path": "s3a://ilum-files/tables/silver/animals_delta",
-                "owners_silver_path": "s3a://ilum-files/tables/silver/owners_delta",
-                "animals_gold_path": "s3a://ilum-files/tables/gold/animals_delta",
-                "owners_gold_path": "s3a://ilum-files/tables/gold/owners_delta"
-              }
-            }'
-          )
+            -d '{"type":"interactive_job_execute","jobClass":"silver_to_gold.SilverToGold","jobConfig":{"animals_silver_path":"s3a://ilum-files/tables/silver/animals_delta","owners_silver_path":"s3a://ilum-files/tables/silver/owners_delta","animals_gold_path":"s3a://ilum-files/tables/gold/animals_delta","owners_gold_path":"s3a://ilum-files/tables/gold/owners_delta"}}')
+
           
           RESULT=$(jq -r '.result' <<< "$response")
           

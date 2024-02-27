@@ -28,7 +28,6 @@ jobs:
         run: |
           curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
           sudo install kubectl /usr/local/bin/kubectl
-          kubectl version --client=true 
 
       - name: Forward port 9888 to service ilum-core
         run: kubectl port-forward -n default svc/ilum-core 9888:9888 &
@@ -212,7 +211,7 @@ jobs:
           response=$(curl -X POST "http://localhost:9888/api/v1/group/${{ steps.create_silver_gold.outputs.groupId }}/job/execute" \
           -H "Accept: application/json" \
           -H "Content-Type: application/json" \
-          -d '{"type":"interactive_job_execute","jobClass":$JOB_3_CLASS,"jobConfig":{"animals_silver_path":"s3a://ilum-files/tables/silver/animals_delta","owners_silver_path":"s3a://ilum-files/tables/silver/owners_delta","animals_gold_path":"s3a://ilum-files/tables/gold/animals_delta","owners_gold_path":"s3a://ilum-files/tables/gold/owners_delta"}}')
+          -d '{"type":"interactive_job_execute","jobClass":"silver_to_gold.SilverToGold","jobConfig":{"animals_silver_path":"s3a://ilum-files/tables/silver/animals_delta","owners_silver_path":"s3a://ilum-files/tables/silver/owners_delta","animals_gold_path":"s3a://ilum-files/tables/gold/animals_delta","owners_gold_path":"s3a://ilum-files/tables/gold/owners_delta"}}')
           
           RESULT=$(jq -r '.result' <<< "$response")
           

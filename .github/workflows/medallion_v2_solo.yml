@@ -91,7 +91,7 @@ jobs:
           -H "Accept: application/json"
 
     #Bronze to Silver
-  Silver: # jakaś nazwa dla tej sekcjii
+  Silver: # jakaś nazwa dla tej sekcji
     runs-on: self-hosted
     needs: Bronze
     steps:

@@ -8,7 +8,8 @@ env:
   JOB_3_NAME: silver_to_gold
 
 jobs:
-  Bronze: # jakaś nazwa dla tej sekcjii
+
+  Bronze:
     runs-on: self-hosted
     steps:
       - name: Checkout
@@ -19,18 +20,19 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install kubectl
-        shell: bash
-        run: |
-          curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
-          sudo install kubectl /usr/local/bin/kubectl
-          kubectl version --client=true
+        uses: actions/setup-kubectl@v1
+        with:
+          version: v1.18.0
+
+#      - name: Install kubectl
+#        shell: bash # sprawdz czy bez tego przejdzie
+#        run: |
+#          curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
+#          sudo install kubectl /usr/local/bin/kubectl
+#          kubectl version --client=true
 
       - name: Forward port 9888 to service ilum-core
-        run: |
-          kubectl port-forward -n default svc/ilum-core 9888:9888 &
-
-#Load data to Bronze
-
+        run: kubectl port-forward -n default svc/ilum-core 9888:9888 &
 
       - name: Create "Load data to Bronze" Interactive Job
         id: create_load_data

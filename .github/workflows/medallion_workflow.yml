@@ -3,7 +3,6 @@ name: Medalion
 on: [push]
 
 env:
-  REPOSITORY: kmush12/Medallion
   JOB_1_NAME: load_data_to_bronze
   JOB_2_NAME: bronze_to_silver
   JOB_3_NAME: silver_to_gold
@@ -12,7 +11,6 @@ env:
   JOB_3_CORRECT_RESULT: Processing data from silver to gold complete!
 
 jobs:
-
   Bronze:
     runs-on: self-hosted
     steps:
@@ -20,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          repository: $REPOSITORY
+          repository: kmush12/Medallion
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install kubectl
@@ -45,24 +43,33 @@ jobs:
           -F "scale=1" \
           -F "pyRequirements=pandas" \
           -F "pyFiles=@/runner/_work/Medallion/Medallion/Jobs/load_data_to_bronze.py")
-          echo $GROUP_1_ID
           echo "groupId=$(echo "$GROUP_1_ID" | jq -r '.groupId' )" >> $GITHUB_OUTPUT
+
+#      - name: Group state check
+#        run: |
+#          while true; do
+#            response=$(curl -X GET "http://localhost:9888/api/v1/group/name/$JOB_1_NAME" \
+#              -H "Accept: application/json")
+#
+#            STATE=$(jq -r '.jobs[].state' <<< "$response")
+#
+#            if [[ $STATE = READY ]]; then
+#              echo "Group is ready!"
+#              break
+#            fi
+#
+#            echo "Group is not ready. Wait..."
+#            sleep 20
+#          done
 
       - name: Group state check
         run: |
-          while true; do
-            response=$(curl -X GET "http://localhost:9888/api/v1/group/name/$JOB_1_NAME" \
-              -H "Accept: application/json")
-
-            STATE=$(jq -r '.jobs[].state' <<< "$response")
-            if [[ $STATE = READY ]]; then
-              echo "Group is ready!"
-              break
-            fi
-          
-            echo "Group is not ready. Wait..."
+          while [[ $(curl -sL "http://localhost:9888/api/v1/group/name/$JOB_1_NAME" | jq -r '.jobs[].state') != "READY" ]]; do
+            echo "Group is not ready. Waiting..."
             sleep 20
           done
+
+          echo "Group is ready!"
 
       - name: Execute "Load data to Bronze" Job
         run: |
@@ -90,7 +97,6 @@ jobs:
           curl -X DELETE "http://localhost:9888/api/v1/group/${{ steps.create_load_data.outputs.groupId }}" \
           -H "Accept: application/json"
 
-    #Bronze to Silver
   Silver:
     runs-on: self-hosted
     needs: Bronze
@@ -99,7 +105,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          repository: $REPOSITORY
+          repository: kmush12/Medallion
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install kubectl
@@ -171,8 +177,6 @@ jobs:
         run: |
           curl -X DELETE "http://localhost:9888/api/v1/group/${{ steps.create_bronze_silver.outputs.groupId }}" \
           -H "Accept: application/json"
-          
-#Silver to Gold
 
   Gold:
     runs-on: self-hosted
@@ -182,7 +186,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          repository: $REPOSITORY
+          repository: kmush12/Medallion
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install kubectl
@@ -243,7 +247,7 @@ jobs:
           else
             echo "echo "Data load failed! Response: $response""
             exit 1
-          fi    
+          fi
 
       - name: Stop "Silver to Gold" group
         run: |

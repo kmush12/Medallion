@@ -177,7 +177,8 @@ jobs:
           -H "Accept: application/json"
           
 #Silver to Gold
-  Gold: # jakaś nazwa dla tej sekcjii
+
+  Gold:
     runs-on: self-hosted
     needs: Silver
     steps:

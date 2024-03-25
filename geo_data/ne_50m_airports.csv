@@ -1,0 +1,282 @@
+X,Y,scalerank,featurecla,type,name,abbrev,location,gps_code,iata_code,wikipedia,natlscale
+113.935016387376,22.3153328280868,2,Airport,major,Hong Kong Int'l,HKG,terminal,VHHH,HKG,http://en.wikipedia.org/wiki/Hong_Kong_International_Airport,150.000
+121.231370453323,25.0767411043346,2,Airport,major,Taoyuan,TPE,terminal,RCTP,TPE,http://en.wikipedia.org/wiki/Taiwan_Taoyuan_International_Airport,150.000
+4.76437693232812,52.3089323889822,2,Airport,major,Schiphol,AMS,terminal,EHAM,AMS,http://en.wikipedia.org/wiki/Amsterdam_Schiphol_Airport,150.000
+103.986413880993,1.35616083528126,2,Airport,major,Singapore Changi,SIN,terminal,WSSS,SIN,http://en.wikipedia.org/wiki/Singapore_Changi_Airport,150.000
+-0.453156652063309,51.4709958799938,2,Airport,major,London Heathrow,LHR,parking,EGLL,LHR,http://en.wikipedia.org/wiki/London_Heathrow_Airport,150.000
+174.791719433715,-37.0063551142815,2,Airport,major,Auckland Int'l,AKL,terminal,NZAA,AKL,http://en.wikipedia.org/wiki/Auckland_International_Airport,150.000
+-149.981725100633,61.1728936745367,2,Airport,major,Anchorage Int'l,ANC,terminal,PALH,ANC,http://en.wikipedia.org/wiki/Lake_Hood_Seaplane_Base,150.000
+-84.4253974336047,33.6405290807352,2,Airport,major,Hartsfield-Jackson Atlanta Int'l,ATL,terminal,KATL,ATL,http://en.wikipedia.org/wiki/Hartsfield-Jackson_Atlanta_International_Airport,150.000
+116.588174004661,40.078766336331,2,Airport,major,Beijing Capital,PEK,terminal,ZBAA,PEK,http://en.wikipedia.org/wiki/Beijing_Capital_International_Airport,150.000
+-74.1433718001028,4.69883276192097,2,Airport,major,Eldorado Int'l,BOG,terminal,SKBO,BOG,http://en.wikipedia.org/wiki/El_Dorado_International_Airport,150.000
+72.8745639500051,19.0951019488402,2,Airport,major,Chhatrapati Shivaji Int'l,BOM,terminal,VABB,BOM,http://en.wikipedia.org/wiki/Chhatrapati_Shivaji_International_Airport,150.000
+-71.0164066172958,42.3665658198506,2,Airport,major,Gen E L Logan Int'l,BOS,terminal,KBOS,BOS,http://en.wikipedia.org/wiki/Logan_International_Airport,150.000
+-76.6686428352448,39.1793943583568,2,Airport,major,Baltimore-Washington Int'l Thurgood Marshall,BWI,terminal,KBWI,BWI,http://en.wikipedia.org/wiki/Baltimore-Washington_International_Thurgood_Marshall_Airport,150.000
+31.3997430067114,30.1119904385575,2,Airport,major,Cairo Int'l,CAI,terminal,HECA,CAI,http://en.wikipedia.org/wiki/Cairo_International_Airport,150.000
+-7.66321880771143,33.5627883851079,2,Airport,mid,Casablanca-Anfa,CAS,terminal,GMMC,CAS,http://en.wikipedia.org/wiki/Casablanca-Anfa_Airport,150.000
+-67.0057488076316,10.5973549146064,2,Airport,mid,Simon Bolivar Int'l,CCS,terminal,SVMI,CCS,http://en.wikipedia.org/wiki/Sim%C3%B3n_Bol%C3%ADvar_International_Airport,150.000
+18.5976565083138,-33.9704466120395,2,Airport,major,Cape Town Int'l,CPT,terminal,FACT,CPT,http://en.wikipedia.org/wiki/Cape_Town_International_Airport,150.000
+103.956136481695,30.5810712647464,2,Airport,major,Chengdushuang Liu,CTU,terminal,ZUUU,CTU,http://en.wikipedia.org/wiki/Chengdu_Shuangliu_International_Airport,150.000
+77.0878362565332,28.5592039760586,2,Airport,major,Indira Gandhi Int'l,DEL,terminal,VIDP,DEL,http://en.wikipedia.org/wiki/Indira_Gandhi_International_Airport,150.000
+-104.673797338542,39.8494613881509,2,Airport,major,Denver Int'l,DEN,terminal,KDEN,DEN,http://en.wikipedia.org/wiki/Denver_International_Airport,150.000
+-97.0403710741144,32.9001505594816,2,Airport,major,Dallas-Ft. Worth Int'l,DFW,parking,KDFW,DFW,http://en.wikipedia.org/wiki/Dallas-Fort_Worth_International_Airport,150.000
+100.602578626505,13.9202766010347,2,Airport,major,Don Muang Int'l,DMK,terminal,VTBD,DMK,http://en.wikipedia.org/wiki/Don_Mueang_International_Airport,150.000
+55.3540769172243,25.2525655938182,2,Airport,major,Dubai Int'l,DXB,terminal,OMDB,DXB,http://en.wikipedia.org/wiki/Dubai_International_Airport,150.000
+-74.1771472796706,40.6904798278929,2,Airport,major,Newark Int'l,EWR,terminal,KEWR,EWR,http://en.wikipedia.org/wiki/Newark_Liberty_International_Airport,150.000
+-58.5412456939382,-34.8136469380323,2,Airport,major,Ministro Pistarini Int'l,EZE,terminal,SAEZ,EZE,http://en.wikipedia.org/wiki/Ministro_Pistarini_International_Airport,150.000
+-80.1452588465189,26.0717095746827,2,Airport,major,Fort Lauderdale Hollywood Int'l,FLL,terminal,KFLL,FLL,http://en.wikipedia.org/wiki/Fort_Lauderdale-Hollywood_International_Airport,150.000
+-95.3337047912947,29.9865909034907,2,Airport,major,George Bush Intercontinental,IAH,terminal,KIAH,IAH,http://en.wikipedia.org/wiki/George_Bush_Intercontinental_Airport,150.000
+28.8195493087893,40.9778388177797,2,Airport,major,Ataturk Hava Limani,IST,terminal,LTBA,IST,http://en.wikipedia.org/wiki/Atat%C3%BCrk_International_Airport,150.000
+28.2319885648741,-26.1320953994887,2,Airport,major,OR Tambo Int'l,JNB,terminal,FAJS,JNB,http://en.wikipedia.org/wiki/OR_Tambo_International_Airport,150.000
+-134.583573037872,58.3589441045951,2,Airport,mid,Juneau Int'l,JNU,terminal,PAJN,JNU,http://en.wikipedia.org/wiki/Juneau_International_Airport,150.000
+-118.402468548522,33.9441742543586,2,Airport,major,Los Angeles Int'l,LAX,terminal,KLAX,LAX,http://en.wikipedia.org/wiki/Los_Angeles_International_Airport,150.000
+9.27996629691061,45.4603938456252,2,Airport,major,Linate,LIN,terminal,LIML,LIN,http://en.wikipedia.org/wiki/Linate_Airport,150.000
+144.848998091131,-37.6699411967893,2,Airport,major,Melbourne Int'l,MEL,terminal,YMML,MEL,http://en.wikipedia.org/wiki/Melbourne_Airport,150.000
+-99.0826079514239,19.4354695720494,2,Airport,major,Lic Benito Juarez Int'l,MEX,terminal,MMMX,MEX,http://en.wikipedia.org/wiki/Mexico_City_International_Airport,150.000
+121.004122083437,14.5068323762967,2,Airport,major,Ninoy Aquino Int'l,MNL,terminal,RPLL,MNL,http://en.wikipedia.org/wiki/Ninoy_Aquino_International_Airport,150.000
+36.9250887490365,-1.33052964350634,2,Airport,major,Jomo Kenyatta Int'l,NBO,terminal,HKJK,NBO,http://en.wikipedia.org/wiki/Jomo_Kenyatta_International_Airport,150.000
+-157.919783173755,21.332022315024,2,Airport,major,Honolulu Int'l,HNL,terminal,PHNL,HNL,http://en.wikipedia.org/wiki/Honolulu_International_Airport,150.000
+-87.90513439065,41.9765291023803,2,Airport,major,Chicago O'Hare Int'l,ORD,terminal,KORD,ORD,http://en.wikipedia.org/wiki/O'Hare_International_Airport,150.000
+46.701829023464,24.9590317436512,2,Airport,major,King Khalid Int'l,RUH,terminal,OERK,RUH,http://en.wikipedia.org/wiki/King_Khalid_International_Airport,150.000
+-70.7936860162974,-33.3968336342597,2,Airport,major,Arturo Merino Benitez Int'l,SCL,terminal,SCEL,SCL,http://en.wikipedia.org/wiki/Comodoro_Arturo_Merino_Ben%C3%ADtez_International_Airport,150.000
+-122.302289722924,47.4435819127259,2,Airport,major,Tacoma Int'l,SEA,terminal,KSEA,SEA,http://en.wikipedia.org/wiki/Seattle-Tacoma_International_Airport,150.000
+-122.383470344449,37.6170250868053,2,Airport,major,San Francisco Int'l,SFO,terminal,KSFO,SFO,http://en.wikipedia.org/wiki/San_Francisco_International_Airport,150.000
+121.341183788567,31.1872574314078,2,Airport,major,Hongqiao,SHA,terminal,ZSSS,SHA,http://en.wikipedia.org/wiki/Shanghai_Hongqiao_International_Airport,150.000
+37.4159690348414,55.966447172512,2,Airport,major,Sheremtyevo,SVO,terminal,UUEE,SVO,http://en.wikipedia.org/wiki/Sheremetyevo_International_Airport,150.000
+-79.6114193247449,43.6809595186356,2,Airport,major,Toronto-Pearson Int'l,YYZ,terminal,CYYZ,YYZ,http://en.wikipedia.org/wiki/Toronto_Pearson_International_Airport,150.000
+151.166067305601,-33.9365832057717,2,Airport,major,Kingsford Smith,SYD,terminal,YSSY,SYD,http://en.wikipedia.org/wiki/Kingsford_Smith_International_Airport,150.000
+24.9682078665914,60.3187158912982,2,Airport,major,Helsinki Vantaa,HEL,terminal,EFHK,HEL,http://en.wikipedia.org/wiki/Helsinki-Vantaa_Airport,150.000
+2.54186776739457,49.0144200969386,2,Airport,major,Charles de Gaulle Int'l,CDG,terminal,LFPG,CDG,http://en.wikipedia.org/wiki/Charles_de_Gaulle_International_Airport,150.000
+13.2903090925074,52.5544287044101,2,Airport,major,Berlin-Tegel Int'l,TXL,terminal,EDDT,TXL,http://en.wikipedia.org/wiki/Berlin-Tegel_International_Airport,150.000
+16.5607679642129,48.1197563052538,2,Airport,major,Vienna Schwechat Int'l,VIE,terminal,LOWW,VIE,http://en.wikipedia.org/wiki/Vienna_International_Airport,150.000
+8.57182286907608,50.0506770895207,2,Airport,major,Frankfurt Int'l,FRA,terminal,EDDF,FRA,http://en.wikipedia.org/wiki/Frankfurt_Airport,150.000
+12.2501008973638,41.7950786307394,2,Airport,major,Leonardo da Vinci Int'l,FCO,terminal,LIRF,FCO,http://en.wikipedia.org/wiki/Leonardo_da_Vinci_Airport,150.000
+135.442475256249,34.7901980848749,2,Airport,major,Osaka Int'l,ITM,terminal,RJOO,ITM,http://en.wikipedia.org/wiki/Osaka_International_Airport,150.000
+126.802392860276,37.5573005399508,2,Airport,major,Gimpo Int'l,GMP,terminal,RKSS,GMP,http://en.wikipedia.org/wiki/Gimpo_International_Airport,150.000
+11.0991032762581,60.1935783171386,2,Airport,major,Oslo Gardermoen,OSL,terminal,ENGM,OSL,http://en.wikipedia.org/wiki/Gardermoen_Air_Station,150.000
+-47.9207885133625,-15.8699985002824,2,Airport,major,Juscelino Kubitschek Int'l,BSB,terminal,SBBR,BSB,http://en.wikipedia.org/wiki/Bras%C3%ADlia_International_Airport,150.000
+-46.6591155302196,-23.62685882701,2,Airport,major,Congonhas Int'l,CGH,terminal,SBSP,CGH,http://en.wikipedia.org/wiki/Congonhas-S%C3%A3o_Paulo_International_Airport,150.000
+-43.2483813790683,-22.8123437125006,2,Airport,major,Rio de Janeiro-Antonio Carlos Jobim Int'l,GIG,terminal,SBGL,GIG,http://en.wikipedia.org/wiki/Rio_de_Janeiro-Gale%C3%A3o_International_Airport,150.000
+-3.56902665458863,40.4681282733923,2,Airport,major,Madrid Barajas,MAD,terminal,LEMD,MAD,http://en.wikipedia.org/wiki/Madrid_Barajas_International_Airport,150.000
+-66.0042299757548,18.4380770734949,2,Airport,major,Luis Munoz Marin,SJU,terminal,TJSJ,SJU,http://en.wikipedia.org/wiki/Luis_Mu%C3%B1oz_Mar%C3%ADn_International_Airport,150.000
+17.9307299016916,59.6511203397372,2,Airport,major,Arlanda,ARN,terminal,ESSA,ARN,http://en.wikipedia.org/wiki/Stockholm-Arlanda_Airport,150.000
+106.654296151172,-6.1266029559729,2,Airport,major,Soekarno-Hatta Int'l,CGK,parking,WIII,CGK,http://en.wikipedia.org/wiki/Soekarno-Hatta_International_Airport,150.000
+23.9471160554073,37.9362331299254,2,Airport,major,Eleftherios Venizelos Int'l,ATH,terminal,LGAV,ATH,http://en.wikipedia.org/wiki/Athens_International_Airport,150.000
+12.6493508684508,55.6285017221528,3,Airport,major,Copenhagen,CPH,terminal,EKCH,CPH,http://en.wikipedia.org/wiki/Copenhagen_Airport,75.000
+26.0857251587764,44.497041455972,3,Airport,mid,Aeroportul National Bucuresti-Baneasa,BBU,terminal,LRBS,BBU,http://en.wikipedia.org/wiki/Aurel_Vlaicu_International_Airport,75.000
+19.2622301677881,47.433274269248,3,Airport,major,Ferihegy,BUD,terminal,LHBP,BUD,http://en.wikipedia.org/wiki/Budapest_Ferihegy_International_Airport,75.000
+106.638019704811,29.7240422241688,3,Airport,major,Chongqing Jiangbei Int'l,CKG,terminal,ZUCK,CKG,http://en.wikipedia.org/wiki/Chongqing_Jiangbei_International_Airport,75.000
+-80.9439277342763,35.2204281685597,3,Airport,major,Douglas Int'l,CLT,terminal,KCLT,CLT,http://en.wikipedia.org/wiki/Charlotte/Douglas_International_Airport,75.000
+-83.3478935065615,42.2257204508004,3,Airport,major,Detroit Metro,DTW,terminal,KDTW,DTW,http://en.wikipedia.org/wiki/Detroit_Metropolitan_Wayne_County_Airport,75.000
+-6.24388491037139,53.42700828497,3,Airport,major,Dublin,DUB,terminal,EIDW,DUB,http://en.wikipedia.org/wiki/Dublin_Airport,75.000
+-147.865721120795,64.8180981117369,3,Airport,major,Fairbanks Int'l,FAI,terminal,PAFA,FAI,http://en.wikipedia.org/wiki/Fairbanks_International_Airport,75.000
+10.005647830925,53.6320011640866,3,Airport,major,Hamburg,HAM,terminal,EDDH,HAM,http://en.wikipedia.org/wiki/Hamburg_Airport,75.000
+101.713886325743,2.74751295791811,3,Airport,major,Kuala Lumpur Int'l,KUL,terminal,WMKK,KUL,http://en.wikipedia.org/wiki/Kuala_Lumpur_International_Airport,75.000
+-115.151323951283,36.0849602383367,3,Airport,major,Mccarran Int'l,LAS,terminal,KLAS,LAS,http://en.wikipedia.org/wiki/McCarran_International_Airport,75.000
+-81.3073713307985,28.4311506791138,3,Airport,major,Orlando Int'l,MCO,terminal,KMCO,MCO,http://en.wikipedia.org/wiki/Orlando_International_Airport,75.000
+-93.2081003718301,44.8820263631968,3,Airport,major,Minneapolis St. Paul Int'l,MSP,terminal,KMSP,MSP,http://en.wikipedia.org/wiki/Minneapolis-Saint_Paul_International_Airport,75.000
+11.7880627192437,48.3538373961608,3,Airport,major,Franz-Josef-Strauss,MUC,terminal,EDDM,MUC,http://en.wikipedia.org/wiki/Munich_International_Airport,75.000
+-75.2429857676998,39.876087236427,3,Airport,major,Philadelphia Int'l,PHL,terminal,KPHL,PHL,http://en.wikipedia.org/wiki/Philadelphia_International_Airport,75.000
+-112.01363529773,33.4358607639498,3,Airport,major,Sky Harbor Int'l,PHX,terminal,KPHX,PHX,http://en.wikipedia.org/wiki/Phoenix_Sky_Harbor_International_Airport,75.000
+-111.981984879993,40.7867290053708,3,Airport,major,Salt Lake City Int'l,SLC,terminal,KSLC,SLC,http://en.wikipedia.org/wiki/Salt_Lake_City_International_Airport,75.000
+-90.3659545350675,38.7427163155204,3,Airport,major,Lambert St Louis Int'l,STL,terminal,KSTL,STL,http://en.wikipedia.org/wiki/Lambert-St._Louis_International_Airport,75.000
+20.9727263383587,52.171026749259,3,Airport,major,Okecie Int'l,WAW,terminal,EPWA,WAW,http://en.wikipedia.org/wiki/Warsaw_Frederic_Chopin_Airport,75.000
+8.56221279534765,47.4523895064915,3,Airport,major,Zurich Int'l,ZRH,terminal,LSZH,ZRH,http://en.wikipedia.org/wiki/Z%C3%BCrich_Airport,75.000
+4.4543736298165,50.4571296549567,3,Airport,mid,Gosselies,CRL,terminal,EBCI,CRL,http://en.wikipedia.org/wiki/Brussels_South_Charleroi_Airport,75.000
+11.7694828593654,48.3497964078377,3,Airport,major,Munich Freight Terminal,MUCf,freight,EDDMf,MUCf,http://en.wikipedia.org/wiki/Munich_Airport,75.000
+2.07800334981292,41.3031552797463,3,Airport,major,Barcelona,BCN,terminal,LEBL,BCN,http://en.wikipedia.org/wiki/Barcelona_International_Airport,75.000
+14.2674849854076,50.1076511703671,3,Airport,major,Ruzyn,PRG,terminal,LKPR,PRG,http://en.wikipedia.org/wiki/Ruzyn%C4%9B_International_Airport,75.000
+120.345156342151,22.5717061054422,4,Airport,major,Kaohsiung Int'l,KHH,terminal,RCKH,KHH,http://en.wikipedia.org/wiki/Kaohsiung_International_Airport,50.000
+5.20022616032651,12.9174824166181,4,Airport,mid,Sadiq Abubakar III,SKO,terminal,DNSO,SKO,http://en.wikipedia.org/wiki/Sadiq_Abubakar_III_International_Airport,50.000
+-78.4899925545701,-0.145552408466882,4,Airport,mid,Mariscal Sucre Int'l,UIO,terminal,SEQU,UIO,http://en.wikipedia.org/wiki/Mariscal_Sucre_International_Airport,50.000
+67.1521283592947,24.8985243689595,4,Airport,mid,Karachi Civil,KHI,terminal,OPKC,KHI,http://en.wikipedia.org/wiki/Jinnah_International_Airport,50.000
+28.9360487562255,46.9341619900391,4,Airport,mid,Kishinev S.E.,KIV,terminal,LUKK,KIV,http://en.wikipedia.org/wiki/Chi%C5%9Fin%C4%83u_International_Airport,50.000
+-77.1075656931342,-12.0237161502221,4,Airport,major,Jorge Chavez,LIM,terminal,SPIM,LIM,http://en.wikipedia.org/wiki/Jorge_Ch%C3%A1vez_International_Airport,50.000
+-89.3121421238136,48.3718811492508,4,Airport,mid,Thunder Bay Int'l,YQT,terminal,CYQT,YQT,http://en.wikipedia.org/wiki/Thunder_Bay_International_Airport,50.000
+25.2807164497285,54.6430549307542,4,Airport,major,Vilnius,VNO,terminal,EYVI,VNO,http://en.wikipedia.org/wiki/Vilnius_International_Airport,50.000
+108.755811342151,34.4429391054422,4,Airport,major,Hsien Yang,XIY,terminal,ZLXY,XIY,http://en.wikipedia.org/wiki/Xi'an_Xianyang_International_Airport,50.000
+-100.238394186577,25.859873767729,4,Airport,mid,Del Norte Int'l,NTR,terminal,MMAN,NTR,http://en.wikipedia.org/wiki/Del_Norte_International_Airport,50.000
+-175.135635,-21.24861,4,Airport,mid,Fua'amotu Int'l,TBU,terminal,NFTF,TBU,http://en.wikipedia.org/wiki/Fua'amotu_International_Airport,50.000
+51.8763916812681,32.7460805344321,4,Airport,mid,Esfahan Int'l,IFN,terminal,OIFM,IFN,http://en.wikipedia.org/wiki/Isfahan_International_Airport,50.000
+31.1014,-17.9228,4,Airport,mid,Harare Int'l,HRE,terminal,FVHA,HRE,http://en.wikipedia.org/wiki/Harare_International_Airport,50.000
+47.9714825593316,29.2396800581583,4,Airport,major,Kuwait Int'l,KWI,terminal,OKBK,KWI,http://en.wikipedia.org/wiki/Kuwait_International_Airport,50.000
+-75.6648933870205,45.3201348196531,4,Airport,major,Macdonald-Cartier Int'l,YOW,terminal,CYOW,YOW,http://en.wikipedia.org/wiki/Ottawa_Macdonald-Cartier_International_Airport,50.000
+69.2100736270874,34.5633978864149,4,Airport,mid,Kabul Int'l,KBL,terminal,OAKB,KBL,http://en.wikipedia.org/wiki/Kabul_International_Airport,50.000
+-3.93221929167636,5.2543984451492,4,Airport,mid,Abidjan Port Bouet,ABJ,terminal,DIAP,ABJ,http://en.wikipedia.org/wiki/Port_Bouet_Airport,50.000
+-99.7545085619681,16.76196735278,4,Airport,major,General Juan N Alvarez Int'l,ACA,terminal,MMAA,ACA,http://en.wikipedia.org/wiki/General_Juan_N._%C3%81lvarez_International_Airport,50.000
+-0.171402855660817,5.60698152381193,4,Airport,major,Kotoka Int'l,ACC,terminal,DGAA,ACC,http://en.wikipedia.org/wiki/Kotoka_International_Airport,50.000
+38.7931904366343,8.98173027581099,4,Airport,mid,Bole Int'l,ADD,terminal,HAAB,ADD,http://en.wikipedia.org/wiki/Bole_International_Airport,50.000
+45.030602,12.8278,4,Airport,mid,Aden Int'l,ADE,terminal,OYAA,ADE,http://en.wikipedia.org/wiki/Aden_International_Airport,50.000
+138.532101457699,-34.9405860275154,4,Airport,mid,Adelaide Int'l,ADL,terminal,YPAD,ADL,http://en.wikipedia.org/wiki/Adelaide_International_Airport,50.000
+77.0120458771175,43.3464943144793,4,Airport,major,Almaty Int'l,ALA,terminal,UAAA,ALA,http://en.wikipedia.org/wiki/Almaty_International_Airport,50.000
+3.21207353516506,36.6997206663535,4,Airport,major,Houari Boumediene,ALG,terminal,DAAG,ALG,http://en.wikipedia.org/wiki/Houari_Boumedienne_Airport,50.000
+37.2273414057828,36.1846237314314,4,Airport,major,Aleppo Int'l,ALP,terminal,OSAP,ALP,http://en.wikipedia.org/wiki/Aleppo_International_Airport,50.000
+72.6209000884332,23.0707454635881,4,Airport,mid,Sardar Vallabhbhai Patel Int'l,AMD,terminal,VAAH,AMD,http://en.wikipedia.org/wiki/Sardar_Vallabhbhai_Patel_International_Airport,50.000
+-70.4409908509407,-23.4489545248317,4,Airport,mid,Cerro Moreno Int'l,ANF,terminal,SCFA,ANF,http://en.wikipedia.org/wiki/Cerro_Moreno_International_Airport,50.000
+58.3639659208246,37.984853438957,4,Airport,mid,Ashkhabad Northwest,ASB,terminal,UTAA,ASB,http://en.wikipedia.org/wiki/Ashgabat_Airport,50.000
+38.9063540136321,15.2936159696499,4,Airport,mid,Yohannes Iv Int'l,ASM,terminal,HHAS,ASM,http://en.wikipedia.org/wiki/Asmara_International_Airport,50.000
+-57.5139078247136,-25.2416592533816,4,Airport,mid,Silvio Pettirossi Int'l,ASU,terminal,SGAS,ASU,http://en.wikipedia.org/wiki/Silvio_Pettirossi_International_Airport,50.000
+-64.7027740686514,32.3591739601581,4,Airport,mid,Bermuda Int'l,BDA,terminal,TXKF,BDA,http://en.wikipedia.org/wiki/Bermuda_International_Airport,50.000
+20.2912845946621,44.8190766654433,4,Airport,major,Surcin,BEG,terminal,LYBE,BEG,http://en.wikipedia.org/wiki/Belgrade_Nikola_Tesla_Airport,50.000
+35.4930853618161,33.8254400618668,4,Airport,major,Beirut Int'l,BEY,terminal,OLBA,BEY,http://en.wikipedia.org/wiki/Beirut_Rafic_Hariri_International_Airport,50.000
+77.3408714713579,23.2855684869809,4,Airport,mid,Bairagarh,BHO,terminal,VABP,BHO,http://en.wikipedia.org/wiki/Bhopal_Airport,50.000
+-7.94727226970801,12.5393363425867,4,Airport,mid,Bamako Senou,BKO,terminal,GABS,BKO,http://en.wikipedia.org/wiki/Senou_International_Airport,50.000
+-86.6692867356375,36.1314876361697,4,Airport,major,Nashville Int'l,BNA,terminal,KBNA,BNA,http://en.wikipedia.org/wiki/Nashville_International_Airport,50.000
+153.120256418844,-27.3853965939099,4,Airport,major,Brisbane Int'l,BNE,terminal,YBBN,BNE,http://en.wikipedia.org/wiki/Brisbane_Airport,50.000
+-116.221841070549,43.5689592234704,4,Airport,major,Boise Air Terminal,BOI,terminal,KBOI,BOI,http://en.wikipedia.org/wiki/Boise_Airport,50.000
+-156.771835,71.289299,4,Airport,mid,Wiley Post Will Rogers Mem.,BRW,terminal,PABR,BRW,http://en.wikipedia.org/wiki/Wiley_Post-Will_Rogers_Memorial_Airport,50.000
+-78.7319965523308,42.9340337493526,4,Airport,major,Greater Buffalo Int'l,BUF,terminal,KBUF,BUF,http://en.wikipedia.org/wiki/Buffalo_Niagara_International_Airport,50.000
+28.622552042904,-20.0155684094908,4,Airport,mid,Bulawayo,BUQ,terminal,FVBU,BUQ,http://en.wikipedia.org/wiki/Joshua_Mqabuko_Nkomo_International_Airport,50.000
+114.933119029209,4.94547528227685,4,Airport,major,Brunei Int'l,BWN,terminal,WBSB,BWN,http://en.wikipedia.org/wiki/Brunei_International_Airport,50.000
+113.297516552171,23.3891511573243,4,Airport,major,Guangzhou Baiyun Int'l,CAN,terminal,ZGGG,CAN,http://en.wikipedia.org/wiki/Guangzhou_Baiyun_International_Airport,50.000
+-73.0621061746214,-36.7763727437881,4,Airport,mid,Carriel Sur Int'l,CCP,terminal,SCIE,CCP,http://en.wikipedia.org/wiki/Carriel_Sur_International_Airport,50.000
+88.4400010130197,22.6453893785064,4,Airport,major,Netaji Subhash Chandra Bose Int'l,CCU,terminal,VECC,CCU,http://en.wikipedia.org/wiki/Netaji_Subhash_Chandra_Bose_International_Airport,50.000
+91.8147107162383,22.2455658585738,4,Airport,mid,Chittagong,CGP,terminal,VGEG,CGP,http://en.wikipedia.org/wiki/Shah_Amanat_International_Airport,50.000
+172.538675565223,-43.4885486784104,4,Airport,major,Christchurch Int'l,CHC,terminal,NZCH,CHC,http://en.wikipedia.org/wiki/Christchurch_International_Airport,50.000
+-13.6210656251671,9.57418115850082,4,Airport,mid,Conakry,CKY,terminal,GUCY,CKY,http://en.wikipedia.org/wiki/Conakry_International_Airport,50.000
+-81.8384406064046,41.4111916124966,4,Airport,major,Hopkins Int'l,CLE,terminal,KCLE,CLE,http://en.wikipedia.org/wiki/Cleveland_Hopkins_International_Airport,50.000
+-76.3850714728091,3.54328635123219,4,Airport,mid,Alfonso Bonilla Aragon Int'l,CLO,terminal,SKCL,CLO,http://en.wikipedia.org/wiki/Alfonso_Bonilla_Arag%C3%B3n_International_Airport,50.000
+2.3838000724352,6.3582465034691,4,Airport,mid,Cotonou Cadjehon,COO,terminal,DBBB,COO,http://en.wikipedia.org/wiki/Cadjehoun_Airport,50.000
+-64.2123157670801,-31.3156811684889,4,Airport,mid,Ingeniero Ambrosio L.V. Taravella Int'l,COR,terminal,SACO,COR,http://en.wikipedia.org/wiki/Ingeniero_Ambrosio_L.V._Taravella_International_Airport,50.000
+-75.5123349559682,10.4449381764915,4,Airport,mid,Rafael Nunez,CTG,terminal,SKCG,CTG,http://en.wikipedia.org/wiki/Rafael_N%C3%BA%C3%B1ez_International_Airport,50.000
+-86.8744172506694,21.04019667144,4,Airport,major,Cancun,CUN,terminal,MMUN,CUN,http://en.wikipedia.org/wiki/Canc%C3%BAn_International_Airport,50.000
+-105.969204692629,28.7039984997679,4,Airport,mid,General R F Villalobos Int'l,CUU,terminal,MMCU,CUU,http://en.wikipedia.org/wiki/General_Roberto_Fierro_Villalobos_International_Airport,50.000
+90.4049241599237,23.8481243218127,4,Airport,mid,Zia Int'l Dhaka,DAC,terminal,VGHS,DAC,http://en.wikipedia.org/wiki/Zia_International_Airport,50.000
+130.877501436774,-12.4080559966556,4,Airport,major and military,Darwin Int'l,DRW,terminal,YPDN,DRW,http://en.wikipedia.org/wiki/Darwin_International_Airport,50.000
+30.9457081940881,-29.965914250828,4,Airport,mid,Louis Botha,DUR,terminal,FADN,DUR,http://en.wikipedia.org/wiki/Durban_International_Airport,50.000
+27.5292,-11.5908,4,Airport,mid,Lubumbashi Luano Int'l,FBM,terminal,FZQA,FBM,http://en.wikipedia.org/wiki/Lubumbashi_International_Airport,50.000
+-4.98214637678303,33.9305251844673,4,Airport,mid,Saiss,FEZ,terminal,GMFF,FEZ,http://en.wikipedia.org/wiki/Sa%C3%AFss_Airport,50.000
+15.4465162074561,-4.38916882197582,4,Airport,mid,Kinshasa N Djili Int'l,FIH,terminal,FZAA,FIH,http://en.wikipedia.org/wiki/Kinshasa_International_Airport,50.000
+-13.2002296786483,8.61542361726369,4,Airport,mid,Freetown Lungi,FNA,terminal,GFLL,FNA,http://en.wikipedia.org/wiki/Lungi_International_Airport,50.000
+125.675321571201,39.2001771667656,4,Airport,mid,Sunan,FNJ,terminal,ZKPY,FNJ,http://en.wikipedia.org/wiki/Sunan_International_Airport,50.000
+74.468800339909,43.0554527233303,4,Airport,major,Vasilyevka,FRU,terminal,UAFM,FRU,http://en.wikipedia.org/wiki/Manas_International_Airport,50.000
+25.9243808264147,-24.5580718089441,4,Airport,mid,Sir Seretse Khama Int'l,GBE,terminal,FBSK,GBE,http://en.wikipedia.org/wiki/Sir_Seretse_Khama_International_Airport,50.000
+-103.300766222752,20.5246863485173,4,Airport,major,Don Miguel Hidalgo Int'l,GDL,terminal,MMGL,GDL,http://en.wikipedia.org/wiki/Don_Miguel_Hidalgo_y_Costilla_International_Airport,50.000
+-4.43167796995107,55.8641828570355,4,Airport,major,Glasgow Int'l,GLA,terminal,EGPF,GLA,http://en.wikipedia.org/wiki/Glasgow_International_Airport,50.000
+-90.530181111378,14.5881608290051,4,Airport,mid,La Aurora,GUA,terminal,MGGT,GUA,http://en.wikipedia.org/wiki/La_Aurora_International_Airport,50.000
+-79.887009643933,-2.15833790699136,4,Airport,mid,Simon Bolivar Int'l,GYE,terminal,SEGU,GYE,http://en.wikipedia.org/wiki/Jos%C3%A9_Joaqu%C3%ADn_de_Olmedo_International_Airport,50.000
+105.803759436806,21.2145596707245,4,Airport,major,Noi Bai,HAN,terminal,VVNB,HAN,http://en.wikipedia.org/wiki/Noi_Bai_International_Airport,50.000
+-82.4074206289499,22.9973533364428,4,Airport,major,Jose Marti Int'l,HAV,terminal,MUHA,HAV,http://en.wikipedia.org/wiki/Jos%C3%A9_Mart%C3%AD_International_Airport,50.000
+29.69266601523,30.9183712786239,4,Airport,mid,Borg El Arab Int'l,HBE,terminal,HEBA,HBE,http://en.wikipedia.org/wiki/Borg_El_Arab_Airport,50.000
+39.1504996780448,21.6706857878128,4,Airport,major,King Abdul Aziz Int'l,JED,terminal,OEJN,JED,http://en.wikipedia.org/wiki/King_Abdulaziz_International_Airport,50.000
+8.52213718395767,12.0457071601746,4,Airport,mid,Kano Mallam Aminu Int'l,KAN,terminal,DNKN,KAN,http://en.wikipedia.org/wiki/Mallam_Aminu_Kano_International_Airport,50.000
+76.0130148060075,39.5379686306258,4,Airport,mid,Kashi,KHG,terminal,ZWSH,KHG,http://en.wikipedia.org/wiki/Kashgar_Airport,50.000
+-76.7786897616576,17.9375751552752,4,Airport,major,Norman Manley Int'l,KIN,terminal,MKJP,KIN,http://en.wikipedia.org/wiki/Norman_Manley_International_Airport,50.000
+85.357139531668,27.7002816751609,4,Airport,mid,Tribhuvan Int'l,KTM,terminal,VNKT,KTM,http://en.wikipedia.org/wiki/Tribhuvan_International_Airport,50.000
+13.2347957502699,-8.84831327917379,4,Airport,mid,Luanda 4 de Fevereiro,LAD,terminal,FNLU,LAD,http://en.wikipedia.org/wiki/Quatro_de_Fevereiro_Airport,50.000
+30.3070976454648,59.8054061601897,4,Airport,major,Pulkovo 2,LED,terminal,ULLI,LED,http://en.wikipedia.org/wiki/Pulkovo_Airport,50.000
+74.4108810181748,31.5206296518206,4,Airport,mid,Allama Iqbal Int'l,LHE,terminal,OPLA,LHE,http://en.wikipedia.org/wiki/Allama_Iqbal_International_Airport,50.000
+33.7827885019788,-13.788622823746,4,Airport,mid,Kamuzu Int'l,LLW,terminal,FWKI,LLW,http://en.wikipedia.org/wiki/Lilongwe_International_Airport,50.000
+3.32112435281334,6.57825944540467,4,Airport,major,Lagos Murtala Muhammed,LOS,terminal,DNMM,LOS,http://en.wikipedia.org/wiki/Murtala_Mohammed_International_Airport,50.000
+-68.1780055277945,-16.5098792213977,4,Airport,mid,El Alto Int'l,LPB,terminal,SLLP,LPB,http://en.wikipedia.org/wiki/El_Alto_International_Airport,50.000
+28.4455443211019,-15.3268522509447,4,Airport,mid,Lusaka Int'l,LUN,terminal,FLLS,LUN,http://en.wikipedia.org/wiki/Lusaka_International_Airport,50.000
+32.7032970848623,25.6730347786023,4,Airport,mid,Luxor,LXR,terminal,HELX,LXR,http://en.wikipedia.org/wiki/Luxor_International_Airport,50.000
+80.1637759731545,12.9825301669154,4,Airport,major,Chennai Int'l,MAA,terminal,VOMM,MAA,http://en.wikipedia.org/wiki/Chennai_International_Airport,50.000
+-71.7237688094687,10.5557594684972,4,Airport,mid,La Chinita Int'l,MAR,terminal,SVMC,MAR,http://en.wikipedia.org/wiki/La_Chinita_International_Airport,50.000
+-75.4269557399772,6.171001614358,4,Airport,mid,Jose Maria Cordova,MDE,terminal,SKRG,MDE,http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_C%C3%B3rdova_International_Airport,50.000
+-89.9816280353237,35.0444101240089,4,Airport,major,Memphis Int'l,MEM,terminal,KMEM,MEM,http://en.wikipedia.org/wiki/Memphis_International_Airport,50.000
+-86.1712846229543,12.144635873435,4,Airport,mid,Augusto Cesar Sandino Int'l,MGA,terminal,MNMG,MGA,http://en.wikipedia.org/wiki/Augusto_C._Sandino_International_Airport,50.000
+59.6421943574029,36.2275503134984,4,Airport,major,Mashhad,MHD,terminal,OIMM,MHD,http://en.wikipedia.org/wiki/Mashhad_International_Airport,50.000
+-80.2789718277441,25.7949407212406,4,Airport,major,Miami Int'l,MIA,terminal,KMIA,MIA,http://en.wikipedia.org/wiki/Miami_International_Airport,50.000
+-89.6630235736434,20.9338603864296,4,Airport,mid,Lic M Crecencio Rejon Int'l,MID,terminal,MMMD,MID,http://en.wikipedia.org/wiki/Manuel_Crescencio_Rej%C3%B3n_International_Airport,50.000
+14.4952644555055,35.8489307943501,4,Airport,major,Luqa,MLA,terminal,LMML,MLA,http://en.wikipedia.org/wiki/Malta_International_Airport,50.000
+39.6026631870383,-4.03265262579657,4,Airport,major,Moi Int'l,MBA,terminal,HKMO,MBA,http://en.wikipedia.org/wiki/Moi_International_Airport,50.000
+27.5592160333614,-29.4555740046101,4,Airport,mid,Moshoeshoe I Int'l,MSU,terminal,FXMM,MSU,http://en.wikipedia.org/wiki/Moshoeshoe_I_International_Airport,50.000
+-90.2566939480594,29.9851141460622,4,Airport,major,New Orleans Int'l,MSY,terminal,KMSY,MSY,http://en.wikipedia.org/wiki/Louis_Armstrong_New_Orleans_International_Airport,50.000
+71.418995432932,30.1950780904965,4,Airport,major and military,Multan,MUX,runway,OPMT,MUX,http://en.wikipedia.org/wiki/Multan_International_Airport,50.000
+-56.026636146282,-34.8410485988569,4,Airport,major,Carrasco Int'l,MVD,terminal,SUMU,MVD,http://en.wikipedia.org/wiki/Carrasco_International_Airport,50.000
+-106.270016617885,23.1665960971344,4,Airport,mid,General Rafael Buelna Int'l,MZT,terminal,MMMZ,MZT,http://en.wikipedia.org/wiki/General_Rafael_Buelna_International_Airport,50.000
+-77.4648472290944,25.0486910600866,4,Airport,major,Nassau Int'l,NAS,terminal,MYNN,NAS,http://en.wikipedia.org/wiki/Lynden_Pindling_International_Airport,50.000
+15.0330446385559,12.1295400184115,4,Airport,mid,Ndjamena,NDJ,terminal,FTTJ,NDJ,http://en.wikipedia.org/wiki/N'Djamena_International_Airport,50.000
+2.17730671184125,13.4767572807942,4,Airport,mid,Niamey,NIM,terminal,DRRN,NIM,http://en.wikipedia.org/wiki/Diori_Hamani_International_Airport,50.000
+123.979134508664,10.3158756727292,4,Airport,major,Mactan-Cebu Int'l,CEB,terminal,RPVM,CEB,http://en.wikipedia.org/wiki/Mactan-Cebu_International_Airport,50.000
+15.7497618459595,-12.8025414575915,4,Airport,mid,Nova Lisboa,NOV,terminal,FNHU,NOV,http://en.wikipedia.org/wiki/Nova_Lisboa_Airport,50.000
+-95.8994157953121,41.2997111453012,4,Airport,mid,Eppley Airfield,OMA,terminal,KOMA,OMA,http://en.wikipedia.org/wiki/Eppley_Airfield,50.000
+-165.441641712281,64.5072207026631,4,Airport,mid,Nome,OME,terminal,PAOM,OME,http://en.wikipedia.org/wiki/Nome_Airport,50.000
+-1.51380536165113,12.3535800260473,4,Airport,mid,Ouagadougou,OUA,terminal,DFFD,OUA,http://en.wikipedia.org/wiki/Ouagadougou_Airport,50.000
+-72.2944780260473,18.5756829054286,4,Airport,mid,Mais Gate Int'l,PAP,terminal,MTPP,PAP,http://en.wikipedia.org/wiki/Toussaint_Louverture_International_Airport,50.000
+-98.375759790423,19.163793546584,4,Airport,mid,Puebla,PBC,terminal,MMPB,PBC,http://en.wikipedia.org/wiki/Hermanos_Serd%C3%A1n_International_Airport,50.000
+-122.592738881254,45.5889569315305,4,Airport,major,Portland Int'l,PDX,terminal,KPDX,PDX,http://en.wikipedia.org/wiki/Portland_International_Airport,50.000
+115.974224942233,-31.9411297945783,4,Airport,major,Perth Int'l,PER,terminal,YPPH,PER,http://en.wikipedia.org/wiki/Perth_Airport,50.000
+25.6117777567602,-33.9840877431374,4,Airport,mid,H F Verwoerd,PLZ,terminal,FAPE,PLZ,http://en.wikipedia.org/wiki/Port_Elizabeth_Airport,50.000
+-73.0983841336424,-41.4333820702269,4,Airport,mid,El Tepual Int'l,PMC,terminal,SCTE,PMC,http://en.wikipedia.org/wiki/El_Tepual_Airport,50.000
+104.845027612457,11.5526449176513,4,Airport,major,Pochentong,PNH,terminal,VDPP,PNH,http://en.wikipedia.org/wiki/Phnom_Penh_International_Airport,50.000
+73.9089838110016,18.5791766115328,4,Airport,major and military,Pune,PNQ,terminal,VAPO,PNQ,http://en.wikipedia.org/wiki/Pune_Airport,50.000
+147.211250855977,-9.43865269316142,4,Airport,major,Port Moresby Int'l,POM,terminal,AYPY,POM,http://en.wikipedia.org/wiki/Jacksons_International_Airport,50.000
+-79.3871348215438,9.06687242265839,4,Airport,major,Tocumen Int'l,PTY,terminal,MPTO,PTY,http://en.wikipedia.org/wiki/Tocumen_International_Airport,50.000
+-70.8431237851324,-53.0050698255177,4,Airport,mid,Carlos Ibanez de Campo Int'l,PUQ,terminal,SCCI,PUQ,http://en.wikipedia.org/wiki/Carlos_Ibanez_Del_Campo_International_Airport,50.000
+-78.7913814006751,35.8752323452255,4,Airport,major,Durham Int'l,RDU,terminal,KRDU,RDU,http://en.wikipedia.org/wiki/Raleigh-Durham_International_Airport,50.000
+96.1341946114947,16.9011542818251,4,Airport,major,Mingaladon,RGN,terminal,VYYY,RGN,http://en.wikipedia.org/wiki/Yangon_International_Airport,50.000
+23.9793791116995,56.9220038786097,4,Airport,major,Riga,RIX,terminal,EVRA,RIX,http://en.wikipedia.org/wiki/Riga_International_Airport,50.000
+44.2246467902561,15.4739027755737,4,Airport,mid,Sanaa Int'l,SAH,terminal,OYSN,SAH,http://en.wikipedia.org/wiki/Sana'a_International_Airport,50.000
+44.2289125352942,33.268162986377,4,Airport,major,Baghdad Int'l,SDA,terminal,ORBI,SDA,http://en.wikipedia.org/wiki/Baghdad_International_Airport,50.000
+-69.6764726754667,18.4302196948173,4,Airport,major,De Las Americas Int'l,SDQ,terminal,MDSD,SDQ,http://en.wikipedia.org/wiki/Las_Am%C3%A9ricas_International_Airport,50.000
+106.664246141375,10.8163005571879,4,Airport,major,Tan Son Nhat,SGN,terminal,VVTS,SGN,http://en.wikipedia.org/wiki/Tan_Son_Nhat_International_Airport,50.000
+22.9764353610613,40.5238736887775,4,Airport,major,Thessaloniki,SKG,terminal,LGTS,SKG,http://en.wikipedia.org/wiki/Thessaloniki_International_Airport%2C_%22Macedonia%22,50.000
+23.4024521357708,42.6891841273195,4,Airport,major,Vrazhdebna,SOF,terminal,LBSF,SOF,http://en.wikipedia.org/wiki/Sofia_Airport,50.000
+72.7424384372589,21.1204503297172,4,Airport,major,Surat,STV,terminal,VASU,STV,http://en.wikipedia.org/wiki/Surat_Airport,50.000
+178.560048369959,-18.0458996922854,4,Airport,mid,Nausori Int'l,SUV,terminal,NFNA,SUV,http://en.wikipedia.org/wiki/Nausori_International_Airport,50.000
+52.5897712745211,29.5458013842874,4,Airport,major,Shiraz Int'l,SYZ,terminal,OISS,SYZ,http://en.wikipedia.org/wiki/Shiraz_International_Airport,50.000
+-97.8698137568394,22.2893319525064,4,Airport,mid,Gen Francisco J Mina Int'l,TAM,terminal,MMTM,TAM,http://en.wikipedia.org/wiki/General_Francisco_Javier_Mina_International_Airport,50.000
+-87.2192116348986,14.0599852192071,4,Airport,mid,Toncontin Int'l,TGU,terminal,MHTG,TGU,http://en.wikipedia.org/wiki/Toncont%C3%ADn_International_Airport,50.000
+51.3208069717572,35.6913743304946,4,Airport,major,Mehrabad Int'l,THR,terminal,OIII,THR,http://en.wikipedia.org/wiki/Mehrabad_International_Airport,50.000
+19.7150324049722,41.4208514680567,4,Airport,major,Tirane Rinas,TIA,terminal,LATI,TIA,http://en.wikipedia.org/wiki/Tirana_International_Airport_N%C3%ABn%C3%AB_Tereza,50.000
+-116.975476095598,32.5460499135013,4,Airport,major,General Abelardo L Rodriguez Int'l,TIJ,terminal,MMTJ,TIJ,http://en.wikipedia.org/wiki/General_Abelardo_L._Rodr%C3%ADguez_International_Airport,50.000
+-99.5706494463542,19.3386880423032,4,Airport,mid,Jose Maria Morelos Y Pavon,TLC,terminal,MMTO,TLC,http://en.wikipedia.org/wiki/Lic._Adolfo_L%C3%B3pez_Mateos_International_Airport,50.000
+24.798964869983,59.4165014697451,4,Airport,major,Ulemiste,TLL,terminal,EETN,TLL,http://en.wikipedia.org/wiki/Tallinn_Airport,50.000
+34.8708499180995,32.0007468501844,4,Airport,major,Ben Gurion,TLV,terminal,LLBG,TLV,http://en.wikipedia.org/wiki/Ben_Gurion_International_Airport,50.000
+6.71282193005667,0.374744213699427,4,Airport,mid,Sao Tome Salazar,TMS,terminal,FPST,TMS,http://en.wikipedia.org/wiki/S%C3%A3o_Tom%C3%A9_International_Airport,50.000
+47.4753540009579,-18.7993348763082,4,Airport,mid,Antananarivo Ivato,TNR,terminal,FMMI,TNR,http://en.wikipedia.org/wiki/Ivato_Airport,50.000
+-82.534824252055,27.9800400852184,4,Airport,major,Tampa Int'l,TPA,parking,KTPA,TPA,http://en.wikipedia.org/wiki/Tampa_International_Airport,50.000
+-67.9223617121873,10.1540056883979,4,Airport,mid,Zim Valencia,VLN,terminal,SVVA,VLN,http://en.wikipedia.org/wiki/Arturo_Michelena_International_Airport,50.000
+44.354767968489,48.7916764657611,4,Airport,mid,Gumrak,VOG,terminal,URWW,VOG,http://en.wikipedia.org/wiki/Volgograd_International_Airport,50.000
+102.568238195728,17.9754595948321,4,Airport,mid,Vientiane,VTE,terminal,VLVT,VTE,http://en.wikipedia.org/wiki/Wattay_International_Airport,50.000
+-63.1403888218213,-17.6479468257839,4,Airport,mid,Viru Viru Int'l,VVI,terminal,SLVR,VVI,http://en.wikipedia.org/wiki/Viru_Viru_International_Airport,50.000
+174.811665268238,-41.3289891844659,4,Airport,major,Wellington Int'l,WLG,terminal,NZWN,WLG,http://en.wikipedia.org/wiki/Wellington_International_Airport,50.000
+-130.445587,54.292,4,Airport,mid,Prince Rupert,YPR,terminal,CYPR,YPR,http://en.wikipedia.org/wiki/Prince_Rupert_Airport,50.000
+-82.9600877389448,42.2658784727198,4,Airport,mid,Windsor,YQG,terminal,CYQG,YQG,http://en.wikipedia.org/wiki/Windsor_Airport,50.000
+-104.655433975371,50.4332192867183,4,Airport,mid,Regina,YQR,terminal,CYQR,YQR,http://en.wikipedia.org/wiki/Regina_International_Airport,50.000
+-123.180867003812,49.1935590395715,4,Airport,major,Vancouver Int'l,YVR,terminal,CYVR,YVR,http://en.wikipedia.org/wiki/Vancouver_International_Airport,50.000
+-97.2267694809585,49.9033302471671,4,Airport,major,Winnipeg Int'l,YWG,terminal,CYWG,YWG,http://en.wikipedia.org/wiki/Winnipeg_James_Armstrong_Richardson_International_Airport,50.000
+-106.690181967554,52.1701439447381,4,Airport,mid,John G Diefenbaker Int'l,YXE,terminal,CYXE,YXE,http://en.wikipedia.org/wiki/Saskatoon/John_G._Diefenbaker_International_Airport,50.000
+-135.076210089402,60.7141521481397,4,Airport,mid,Whitehorse Int'l,YXY,terminal,CYXY,YXY,http://en.wikipedia.org/wiki/Whitehorse_International_Airport,50.000
+-114.010560500236,51.1308572567549,4,Airport,major,Calgary Int'l,YYC,terminal,CYYC,YYC,http://en.wikipedia.org/wiki/Calgary_International_Airport,50.000
+-63.1312341333234,46.2858131367525,4,Airport,mid,Charlottetown,YYG,terminal,CYYG,YYG,http://en.wikipedia.org/wiki/Charlottetown_Airport,50.000
+-94.0813639506318,58.7497237849788,4,Airport,mid,Churchill,YYQ,terminal,CYYQ,YYQ,http://en.wikipedia.org/wiki/Churchill_Airport,50.000
+-52.7433337428638,47.6131179007955,4,Airport,mid,St John's Int'l,YYT,terminal,CYYT,YYT,http://en.wikipedia.org/wiki/St._John's_International_Airport,50.000
+-114.437846335049,62.4707373610202,4,Airport,mid,Yellowknife,YZF,terminal,CYZF,YZF,http://en.wikipedia.org/wiki/Yellowknife_Airport,50.000
+16.0615138009014,45.7333266730984,4,Airport,major,Zagreb,ZAG,terminal,LDZA,ZAG,http://en.wikipedia.org/wiki/Zagreb_Airport,50.000
+39.2223319841558,-6.21857034620282,4,Airport,mid,Zanzibar,ZNZ,terminal,HTZA,ZNZ,http://en.wikipedia.org/wiki/Zanzibar_International_Airport,50.000
+-21.9466344031327,64.1318728609901,4,Airport,mid,Reykjavik Air Terminal,REK,terminal,BIRK,REK,http://en.wikipedia.org/wiki/Reykjav%C3%ADk_Airport,50.000
+40.7133465694594,64.5967437730455,4,Airport,mid,Arkhangelsk-Talagi,ARH,terminal,ULAA,ARH,http://en.wikipedia.org/wiki/Talagi_Airport,50.000
+49.2984458036407,55.6080601429764,4,Airport,major,Kazan Int'l,KZN,terminal,UWKD,KZN,http://en.wikipedia.org/wiki/Kazan_International_Airport,50.000
+2.36737912783773,48.7313030458052,4,Airport,major,Paris Orly,ORY,parking,LFPO,ORY,http://en.wikipedia.org/wiki/Orly_Airport_(Paris),50.000
+-71.3839280711731,46.7915684363308,4,Airport,major,Quebec,YQB,terminal,CYQB,YQB,http://en.wikipedia.org/wiki/Qu%C3%A9bec/Jean_Lesage_International_Airport,50.000
+-73.7493162650417,45.4583512294531,4,Airport,major,Montreal-Trudeau,YUL,terminal,CYUL,YUL,http://en.wikipedia.org/wiki/Montr%C3%A9al-Pierre_Elliott_Trudeau_International_Airport,50.000
+140.384401709179,35.7640560727828,4,Airport,major,Narita Int'l,NRT,terminal,RJAA,NRT,http://en.wikipedia.org/wiki/Narita_International_Airport,50.000
+136.814771286824,34.8590296958162,4,Airport,major,Chubu Centrair Int'l,NGO,terminal,RJGG,NGO,http://en.wikipedia.org/wiki/Ch%C5%ABbu_Centrair_International_Airport,50.000
+141.382100450075,43.1106495990978,4,Airport,mid,Okadama,OKD,terminal,RJCO,OKD,http://en.wikipedia.org/wiki/Okadama_Airport,50.000
+5.22725311562336,60.2890610502966,4,Airport,major,Bergen Flesland,BGO,terminal,ENBR,BGO,http://en.wikipedia.org/wiki/Bergen_Airport%2C_Flesland,50.000
+18.9072624292132,69.6796790473478,4,Airport,major,Tromso Langnes,TOS,terminal,ENTC,TOS,http://en.wikipedia.org/wiki/Troms%C3%B8_Airport,50.000
+-48.4795602893793,-1.38974628795546,4,Airport,mid,Val de Caes Int'l,BEL,terminal,SBBE,BEL,http://en.wikipedia.org/wiki/Val_de_C%C3%A3es_International_Airport,50.000
+-54.6689498781305,-20.4572717360311,4,Airport,mid,Campo Grande Int'l,CGR,terminal,SBCG,CGR,http://en.wikipedia.org/wiki/Campo_Grande_International_Airport,50.000
+-49.1737093663469,-25.5360001430558,4,Airport,mid,Afonso Pena Int'l,CWB,terminal,SBCT,CWB,http://en.wikipedia.org/wiki/Afonso_Pena_International_Airport,50.000
+-38.5407472498334,-3.77859496233091,4,Airport,mid,Pinto Martins Int'l,FOR,terminal,SBFZ,FOR,http://en.wikipedia.org/wiki/Pinto_Martins_International_Airport,50.000
+-46.481753608842,-23.4261155770421,4,Airport,major,Sao Paulo-Guarulhos Int'l,GRU,terminal,SBGR,GRU,http://en.wikipedia.org/wiki/S%C3%A3o_Paulo-Guarulhos_International_Airport,50.000
+-49.2266464905994,-16.6323665721637,4,Airport,mid,Santa Genoveva,GYN,terminal,SBGO,GYN,http://en.wikipedia.org/wiki/Santa_Genoveva_Airport,50.000
+-51.1770409488172,-29.9901930170609,4,Airport,mid,Salgado Filho Int'l,POA,terminal,SBPA,POA,http://en.wikipedia.org/wiki/Salgado_Filho_International_Airport,50.000
+-34.9182667174851,-8.13162553076239,4,Airport,mid,Gilberto Freyre Int'l,REC,terminal,SBRF,REC,http://en.wikipedia.org/wiki/Guararapes_International_Airport,50.000
+-38.3347989911732,-12.9143614970326,4,Airport,mid,Deputado Luis Eduardo Magalhaes Int'l,SSA,terminal,SBSV,SSA,http://en.wikipedia.org/wiki/Deputado_Lu%C3%ADs_Eduardo_Magalh%C3%A3es_International_Airport,50.000
+-68.7984838394473,-32.8278001692719,4,Airport,mid,El Plumerillo,MDZ,terminal,SAME,MDZ,http://en.wikipedia.org/wiki/Governor_Francisco_Gabrielli_International_Airport,50.000
+-60.0460645898854,-3.0321390062591,4,Airport,mid,Eduardo Gomes Int'l,MAO,terminal,SBEG,MAO,http://en.wikipedia.org/wiki/Eduardo_Gomes_International_Airport,50.000
+11.5479941396807,3.71484520708126,4,Airport,mid,Yaounde Nsimalen Int'l,NSI,terminal,FKYS,NSI,http://en.wikipedia.org/wiki/Yaound%C3%A9_Nsimalen_International_Airport,50.000
+121.801518760578,31.1523090295533,4,Airport,major,Shanghai Pudong Int'l,PVG,terminal,ZSPD,PVG,http://en.wikipedia.org/wiki/Shanghai_Pudong_International_Airport,50.000
+35.9841052362449,31.9741994015442,4,Airport,mid,Marka Int'l,ADJ,terminal,OJAM,ADJ,http://en.wikipedia.org/wiki/Marka_Airport,50.000
+73.5273902836844,4.18870090323372,4,Airport,major,Male Int'l,MLE,terminal,VRMM,MLE,http://en.wikipedia.org/wiki/Mal%C3%A9_International_Airport,50.000
+-96.1835702143695,19.1424237025017,4,Airport,mid,Gen. Heriberto Jara Int'l,VER,terminal,MMVR,VER,http://en.wikipedia.org/wiki/General_Heriberto_Jara_International_Airport,50.000
+-15.651185561666,11.8889231454855,4,Airport,mid,Osvaldo Vieira Int'l,OXB,terminal,GGOV,OXB,http://en.wikipedia.org/wiki/Osvaldo_Vieira_International_Airport,50.000
+125.645066609434,7.13053746163073,4,Airport,major,Francisco Bangoy Int'l,DVO,terminal,RPMD,DVO,http://en.wikipedia.org/wiki/Francisco_Bangoy_International_Airport,50.000
+55.5115519246793,-4.67106914178521,4,Airport,mid,Seychelles Int'l,SEZ,terminal,FSIA,SEZ,http://en.wikipedia.org/wiki/Seychelles_International_Airport,50.000
+-17.490407907719,14.7456306146748,4,Airport,major,Leopold Sedar Senghor Int'l,DKR,terminal,GOOY,DKR,http://en.wikipedia.org/wiki/Dakar-Yoff-L%C3%A9opold_S%C3%A9dar_Senghor_International_Airport,50.000
+37.2387475981025,19.4341052385231,4,Airport,mid,Port Sudan New Int'l,PZU,terminal,HSPN,PZU,http://en.wikipedia.org/wiki/Port_Sudan_New_International_Airport,50.000
+69.2666137241129,41.2622338767383,4,Airport,major,Tashkent Int'l,TAS,terminal,UTTT,TAS,http://en.wikipedia.org/wiki/Tashkent_International_Airport,50.000
